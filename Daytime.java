@@ -152,5 +152,3 @@ public class Daytime {
 	}
 	
 }
-
->>>>>>> dd24d4be1b84af0450b3c61231b03f1316f41399
