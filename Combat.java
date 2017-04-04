@@ -7,5 +7,14 @@
  *
  */
 class Combat {
-
+	
+	/** Causes an attack upon the specified NPC (or the player) with the specified Item
+	 * 
+	 * @param weapon Item being used to attack victim
+	 * @param victim NPC being attacked, if null then the player is being attacked
+	 */
+	public static void attack(Item weapon, NPC victim)
+	{
+		
+	}
 }
