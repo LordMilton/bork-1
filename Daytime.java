@@ -1,5 +1,4 @@
 /**
-<<<<<<< HEAD
  * 
  */
 
@@ -7,19 +6,6 @@
  * @author Team Red
  *
  */
-class Daytime {
-
-}
-=======
- * Daytime class for Bork
- * 
- * */
- 
- /**
- * @author Team Red
- * 
- * */
-
 
 public class Daytime {
 	
