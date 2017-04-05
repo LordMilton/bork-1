@@ -1,3 +1,12 @@
+/**
+ * 
+ */
+
+/**
+ * @author Team Red
+ *
+ */
+
 class ItemSpecificCommand extends Command {
 
     private String verb;

@@ -1,3 +1,12 @@
+/**
+ * 
+ */
+
+/**
+ * @author Team Red
+ *
+ */
+
 class UnknownCommand extends Command {
 
     private String bogusCommand;

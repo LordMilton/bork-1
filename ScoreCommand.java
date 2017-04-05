@@ -6,6 +6,7 @@
  * @author Team Red
  *
  */
+ 
 class ScoreCommand extends Command{
 
 	/** Instantiates a ScoreCommand

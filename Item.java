@@ -1,3 +1,12 @@
+/**
+ * 
+ */
+
+/**
+ * @author Team Red
+ *
+ */
+
 import java.util.Scanner;
 import java.util.Hashtable;
 import java.util.ArrayList;

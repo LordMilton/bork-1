@@ -1,3 +1,12 @@
+/**
+ * 
+ */
+
+/**
+ * @author Team Red
+ *
+ */
+
 class DropCommand extends Command {
 
     private String itemName;
