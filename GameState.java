@@ -1,11 +1,11 @@
 /**
  * @author Team Red
  * GameState is a singleton class that is essentially our player.
- It keeps track of items in inventory, adventureresCurrentRoom, which dungeon is being used, and health and score.
- 
- It also has the incredibly important task of ensuring our save file can Load (@throw IllegalSaveFormatException)
- contains the correct save file name, the format, 
- 
+ * It keeps track of items in inventory, adventureresCurrentRoom, which dungeon is being used, and health and score.
+ * 
+ * It also has the incredibly important task of ensuring the save file can Load (@throw IllegalSaveFormatException),
+ * contains the correct save file name, the format, 
+ * 
  */
 
 import java.util.Scanner;
