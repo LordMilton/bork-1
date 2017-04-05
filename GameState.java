@@ -96,11 +96,22 @@ public class GameState {
             }
         }
     }
-
+    
+    //Overloaded method, no @param
+    //Does the storing to default-sav-file,@throws IOException
     void store() throws IOException {
         store(DEFAULT_SAVE_FILE);
     }
 
+  
+  /*
+   *store @param String saveName
+   * makes filename from saveName + save-file-extention
+   * create PrintWriter with FileWriter and fileName, 
+   *prints Verion, then dungeon.storeState, prints adventuerermarker
+   *prints current room leader + adventurerscurrentroom.gettitle
+   *for loop with inventory size to print out all inventory information
+   */
     void store(String saveName) throws IOException {
         String filename = saveName + SAVE_FILE_EXTENSION;
         PrintWriter w = new PrintWriter(new FileWriter(filename));
@@ -154,7 +165,8 @@ public class GameState {
     }
 
     /*
-    *
+    * @return Item, @param String name, @throws Item.NoItemException
+    * check inventory first @return item if found, then check room contents and @return item
     */
     Item getItemInVicinityNamed(String name) throws Item.NoItemException {
 
@@ -175,6 +187,11 @@ public class GameState {
         throw new Item.NoItemException();
     }
 
+  /*
+  * @retun Item, @param String name, @throws Item.NoItem.Exception
+  * for each's the inventory to find the right item by name
+  * 
+  */
     Item getItemFromInventoryNamed(String name) throws Item.NoItemException {
 
         for (Item item : inventory) {
@@ -185,16 +202,32 @@ public class GameState {
         throw new Item.NoItemException();
     }
 
+  //@return adventurersCurrentRoom
     Room getAdventurersCurrentRoom() {
         return adventurersCurrentRoom;
     }
 
+ //sets the room @param Room
     void setAdventurersCurrentRoom(Room room) {
         adventurersCurrentRoom = room;
     }
 
+ //@return Dugneon object
     Dungeon getDungeon() {
         return dungeon;
     }
+ 
+  //change health @param integer
+ // this.health += integer
+ 
+ //@return health
+ //gets health and returns integer
+ 
+ //change Score @integer
+ //Score += integer
+ 
+ //@return Score
+ //score += integer
+ 
 
 }
