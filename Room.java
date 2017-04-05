@@ -2,11 +2,13 @@
  * 
  */
 
-/**
+/** Room is the class defining the Rooms of a bork Dungeon.
+ * It has a contents made up of Items, a list of Exits, a 
+ * description, and keeps track of whether or not the player
+ * has entered it.
  * @author Team Red
  *
  */
-
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.IOException;

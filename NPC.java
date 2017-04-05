@@ -5,11 +5,12 @@ import java.util.ArrayList;
  * 
  */
 
-/**
+/** NPC is the class defining non-player characters that can interact with the
+ * player via combat and trade. NPC objects can move around the Dungeon and only
+ * appear in the Dungeon at certain light levels according to the Daytime class.
  * @author Team Red
  *
  */
- 
 class NPC {
 	class NoNPCException extends Exception {}
 	
