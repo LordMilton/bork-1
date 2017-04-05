@@ -36,6 +36,9 @@ public class GameState {
     private Dungeon dungeon;
     private ArrayList<Item> inventory;
     private Room adventurersCurrentRoom;
+    private int playerScore;
+    private int playerHealth;
+    private boolean playerIsDead;
 
     static synchronized GameState instance() {
         if (theInstance == null) {
@@ -46,6 +49,9 @@ public class GameState {
 
     private GameState() {
         inventory = new ArrayList<Item>();
+        playerScore = 0;
+        playerHealth = 0;
+        playerIsDead = false;
     }
 
     /*
