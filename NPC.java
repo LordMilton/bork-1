@@ -14,10 +14,12 @@ class NPC {
 	class NoNPCException extends Exception {}
 	
 	private String name;
+	private Room currentRoom;
 	private boolean isHostile;
 	private int health;
 	private boolean isAlive;
 	private int maxLightLevelToSpawn;
+	private ArrayList<Item> inventory;
 	
 	/** Creates a new NPC from a given Scanner connected to a .bork file
 	 * 
@@ -31,102 +33,103 @@ class NPC {
 		
 	}
 	
-	/**
+	/** Determines if the NPC goes by the paramater name
 	 * 
-	 * @param name
-	 * @return
+	 * @param name Name to check against NPC's name
+	 * @return True if this name is the same as the parameter name, false otherwise
 	 */
 	public boolean goesBy(String name)
 	{
 		
 	}
 	
-	/**
+	/** Returns the NPC's name
 	 * 
-	 * @return
+	 * @return name
 	 */
 	public String getName()
 	{
 		
 	}
 	
-	/**
+	/** Returns whether or not the NPC is currently alive
 	 * 
-	 * @return
+	 * @return isAlive
 	 */
 	public boolean getIsAlive()
 	{
 		
 	}
 	
-	/**
+	/** Returns whether or not the NPC is hostile to the player
 	 * 
-	 * @return
+	 * @return isHostile
 	 */
 	public boolean getIsHostile()
 	{
 		
 	}
 	
-	/**
+	/** Returns the Room the NPC is currently in, null if it has not spawned yet
 	 * 
-	 * @return
+	 * @return currentRoom
 	 */
 	public Room getCurrentRoom()
 	{
 		
 	}
 	
-	/**
+	/** A list of the names of the Item's in the NPC's inventory
 	 * 
-	 * @return
+	 * @return An ArrayList<String> of all the names of the Items in inventory
 	 */
-	public ArrayListM<String> getInventoryNames()
+	public ArrayList<String> getInventoryNames()
 	{
 		
 	}
 	
-	/**
+	/** Trades the parameter Item with the first Item in the NPC's inventory, will not be enacted if the NPC's inventory is empty
 	 * 
-	 * @param itemToTrade
-	 * @return
+	 * @param itemToTrade Item that the NPC will receive
+	 * @return Item that the NPC will give in return
 	 */
 	public Item trade(Item itemToTrade)
 	{
 		
 	}
 	
-	/**
+	/** Adds an Item to the NPC's inventory
 	 * 
-	 * @param item
+	 * @param item Item to add to inventory
 	 */
 	public void addToInventory(Item item)
 	{
 		
 	}
 	
-	/**
+	/** Removes an Item from the NPC's inventory
 	 * 
-	 * @param item
+	 * @param item Item remove from inventory
 	 */
 	private void removeFromInventory(Item item)
 	{
 		
 	}
 	
-	/**
+	/** Returns an Item from the NPC's inventory going by the parameter name
 	 * 
-	 * @param name
-	 * @return
+	 * @param name Name of the Item to search for in inventory
+	 * @return The Item going by the parameter name if it is in inventory
+	 * @throws NoItemException If there is no Item in inventory that goes by the parameter name
 	 */
-	public Item getItemFromInventoryNamed(String name)
+	public Item getItemFromInventoryNamed(String name) throws NoItemException
 	{
 		
 	}
 	
-	/**
+	/** Moves the NPC to a new Room
 	 * 
-	 * @return
+	 * @return The Room the NPC moved to
 	 */
 	public Room move()
 	{
