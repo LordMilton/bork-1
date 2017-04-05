@@ -1,10 +1,11 @@
 /**
- * 
- */
-
-/**
  * @author Team Red
- *
+ * GameState is a singleton class that is essentially our player.
+ It keeps track of items in inventory, adventureresCurrentRoom, which dungeon is being used, and health and score.
+ 
+ It also has the incredibly important task of ensuring our save file can Load (@throw IllegalSaveFormatException)
+ contains the correct save file name, the format, 
+ 
  */
 
 import java.util.Scanner;
@@ -47,6 +48,15 @@ public class GameState {
         inventory = new ArrayList<Item>();
     }
 
+    /*
+    * @throws IllegalSaveFormatException, Dungeon.IllegalDungeonFormatException
+    *Creates a new Scanner to read in our *correct* save file,
+    * raeds dungeonFileLine and checks if correct name against Dungeon.FILENAME_LEADER,
+    * passes Scanner to Dungeon constructor to restore previous dungeon used
+    * next throws away "Adventurer:" line
+    * reads in adventureres Current Room
+    * gets current list of items in inventory
+    */
     void restore(String filename) throws FileNotFoundException,
         IllegalSaveFormatException, Dungeon.IllegalDungeonFormatException {
 
@@ -108,11 +118,18 @@ public class GameState {
         w.close();
     }
 
+    /*
+    *sets the dungeon just made into the dungeon made by GameState
+    *sets AdventuersCurrentRoom to the Dungeon.getEntry();
+    */
     void initialize(Dungeon dungeon) {
         this.dungeon = dungeon;
         adventurersCurrentRoom = dungeon.getEntry();
     }
 
+    /*
+    * @return an ArrayList of item in inventory names
+    */
     ArrayList<String> getInventoryNames() {
         ArrayList<String> names = new ArrayList<String>();
         for (Item item : inventory) {
@@ -121,14 +138,24 @@ public class GameState {
         return names;
     }
 
+    /*
+    *adds @param item to inventory
+    */
     void addToInventory(Item item) /* throws TooHeavyException */ {
         inventory.add(item);
     }
 
+    /*
+    *What has come must go
+    *@param item to remove the item from ArrayList of items
+    */
     void removeFromInventory(Item item) {
         inventory.remove(item);
     }
 
+    /*
+    *
+    */
     Item getItemInVicinityNamed(String name) throws Item.NoItemException {
 
         // First, check inventory.
