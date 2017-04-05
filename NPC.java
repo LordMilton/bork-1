@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import dufour_borkv3.Dungeon;
-
 /**
  * 
  */
@@ -12,6 +10,8 @@ import dufour_borkv3.Dungeon;
  */
  
 class NPC {
+	class NoNPCException extends Exception {}
+	
 	private String name;
 	private boolean isHostile;
 	private int health;
