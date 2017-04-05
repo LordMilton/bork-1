@@ -1,11 +1,20 @@
 class DropCommand extends Command {
 
     private String itemName;
-
+    
+    
+	/** Constructor for DropCommand class
+	 * 
+	 * 
+	 * */
     DropCommand(String itemName) {
         this.itemName = itemName;
     }
 
+    /** executes DropCommand
+	 * 
+	 * 
+	 * */
     public String execute() {
         if (itemName == null || itemName.trim().length() == 0) {
             return "Drop what?\n";
