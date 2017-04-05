@@ -1,6 +1,19 @@
+/**
+ * 
+ */
+
+/**
+ * @author Team Red
+ *
+ */
+
 import java.util.List;
 import java.util.Arrays;
 
+/** Constructor for CommandFactory class
+ * 
+ * 
+ * */
 public class CommandFactory {
 
     private static CommandFactory theInstance;
@@ -17,6 +30,10 @@ public class CommandFactory {
     private CommandFactory() {
     }
 
+    /** Creates command for user interaction with environment
+    * 
+    * @param command String
+    * */    
     public Command parse(String command) {
         String parts[] = command.split(" ");
         String verb = parts[0];
