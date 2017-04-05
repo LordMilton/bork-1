@@ -97,20 +97,19 @@ public class GameState {
         }
     }
     
-    //Overloaded method, no @param
-    //Does the storing to default-sav-file,@throws IOException
+    /** Calls the main store(saveName : String) method with a default save File name
+     * 
+     * @throws IOException In the case of DEFAULT_SAVE_FILE being a non-existent File
+     */
     void store() throws IOException {
         store(DEFAULT_SAVE_FILE);
     }
 
   
-  /*
-   *store @param String saveName
-   * makes filename from saveName + save-file-extention
-   * create PrintWriter with FileWriter and fileName, 
-   *prints Verion, then dungeon.storeState, prints adventuerermarker
-   *prints current room leader + adventurerscurrentroom.gettitle
-   *for loop with inventory size to print out all inventory information
+  /** Saves necessary information to a .sav File
+   * 
+   * @param String saveName Name of the File to save to
+   * @throws IOException In the case that saveName is the name of a non-existent File
    */
     void store(String saveName) throws IOException {
         String filename = saveName + SAVE_FILE_EXTENSION;
@@ -129,18 +128,19 @@ public class GameState {
         w.close();
     }
 
-    /*
-    *sets the dungeon just made into the dungeon made by GameState
-    *sets AdventuersCurrentRoom to the Dungeon.getEntry();
-    */
+	/** Sets the GameState instance's Dungeon to be the parameter Dungeon and sets the Adventurer's current room as the specified Dungeon's entry Room
+	 * 
+	 * @param dungeon Dungeon to set as the GameState's current Dungeon
+	 */
     void initialize(Dungeon dungeon) {
         this.dungeon = dungeon;
         adventurersCurrentRoom = dungeon.getEntry();
     }
 
-    /*
-    * @return an ArrayList of item in inventory names
-    */
+	/** Returns the names of the Items currently in the player's inventory
+	 * 
+	 * @return An ArrayList of the names of the Items in inventory
+	 */
     ArrayList<String> getInventoryNames() {
         ArrayList<String> names = new ArrayList<String>();
         for (Item item : inventory) {
@@ -149,25 +149,28 @@ public class GameState {
         return names;
     }
 
-    /*
-    *adds @param item to inventory
-    */
+    /** Adds the parameter Item to the player's inventory
+     * 
+     * @param item Item to add to inventory
+     */
     void addToInventory(Item item) /* throws TooHeavyException */ {
         inventory.add(item);
     }
 
-    /*
-    *What has come must go
-    *@param item to remove the item from ArrayList of items
-    */
+    /** Removes the parameter Item from the player's inventory
+     *
+     * @param item Item to remove from inventory
+     */
     void removeFromInventory(Item item) {
         inventory.remove(item);
     }
 
-    /*
-    * @return Item, @param String name, @throws Item.NoItemException
-    * check inventory first @return item if found, then check room contents and @return item
-    */
+    /** Returns the Item in the vicinity that has the parameter name as its primaryName
+     * 
+     * @return Item The Item going by the parameter name if it is in the player's vicinity
+     * @param String name Name of the Item to search for
+     * @throws Item.NoItemException If there is no Item with the parameter name in the player's inventory or current Room
+     */
     Item getItemInVicinityNamed(String name) throws Item.NoItemException {
 
         // First, check inventory.
@@ -187,11 +190,12 @@ public class GameState {
         throw new Item.NoItemException();
     }
 
-  /*
-  * @retun Item, @param String name, @throws Item.NoItem.Exception
-  * for each's the inventory to find the right item by name
-  * 
-  */
+	/**
+	 * 
+	 * @return Item The Item going by the parameter name if it is in the player's inventory
+	 * @param String name Name of the Item to search for
+	 * @throws Item.NoItem.Exception If there is no Item going by the parameter name in the player's inventory
+	 */
     Item getItemFromInventoryNamed(String name) throws Item.NoItemException {
 
         for (Item item : inventory) {
@@ -202,17 +206,26 @@ public class GameState {
         throw new Item.NoItemException();
     }
 
-  //@return adventurersCurrentRoom
+    /** Returns the current Room of the player
+     * 
+     * @return adventurersCurrentRoom
+     */
     Room getAdventurersCurrentRoom() {
         return adventurersCurrentRoom;
     }
 
- //sets the room @param Room
+    /** Sets the player's current Room to the parameter Room
+     * 
+     * @param room Room to set adventurersCurrentRoom as
+     */
     void setAdventurersCurrentRoom(Room room) {
         adventurersCurrentRoom = room;
     }
 
- //@return Dugneon object
+    /** Returns the Dungeon currently being used by the GameState instance
+     * 
+     * @return The Dungeon currently being used
+     */
     Dungeon getDungeon() {
         return dungeon;
     }
