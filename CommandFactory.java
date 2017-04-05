@@ -33,6 +33,7 @@ public class CommandFactory {
     /** Creates command for user interaction with environment
     * 
     * @param command String
+    * @return Command
     * */    
     public Command parse(String command) {
         String parts[] = command.split(" ");

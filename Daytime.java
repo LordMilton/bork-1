@@ -145,7 +145,7 @@ public class Daytime {
 	
 	/** Returns the light value for use by NPCs and Rooms
 	 * 
-	 * 
+	 * @return light
 	 * */
 	public static int getLightValue(){
 		return light;

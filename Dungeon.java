@@ -52,6 +52,10 @@ public class Dungeon {
     /**
      * Read from the .bork filename passed, and instantiate a Dungeon object
      * based on it.
+     * 
+     * @param filename
+     * @throws IllegalDungeonFormatException, FileNotFoundException
+     * 
      */
     public Dungeon(String filename) throws FileNotFoundException, 
         IllegalDungeonFormatException {
@@ -62,6 +66,10 @@ public class Dungeon {
     /**
      * Read from the .bork filename passed, and instantiate a Dungeon object
      * based on it, including (possibly) the items in their original locations.
+     * 
+     * @param filename, initState
+     * @throws IllegalDungeonFormatException, FileNotFoundException
+     * 
      */
     public Dungeon(String filename, boolean initState) 
         throws FileNotFoundException, IllegalDungeonFormatException {
@@ -181,6 +189,9 @@ public class Dungeon {
      * Get the Item object whose primary name is passed. This has nothing to
      * do with where the Adventurer might be, or what's in his/her inventory,
      * etc.
+     * 
+     * @param String primaryItemName
+     * @return Item primaryItemName
      */
     public Item getItem(String primaryItemName) throws Item.NoItemException {
         
