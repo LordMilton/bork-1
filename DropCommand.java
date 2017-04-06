@@ -2,7 +2,7 @@
  * 
  */
 
-/**
+/** DropCommand deals with any Command relating to the dropping of an item from a player's inventory
  * @author Team Red
  *
  */

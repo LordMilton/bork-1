@@ -2,11 +2,10 @@
  * 
  */
 
-/**
+/** Interpreter is the main class that runs a bork game.
  * @author Team Red
  *
  */
-
 import java.util.Scanner;
 
 

@@ -2,11 +2,11 @@
  * 
  */
 
-/**
+/** Item represents an object in a bork game. It can be interacted with and affected by the player and knows whether or
+ * not it can be used as a weapon. If it can, then it knows how much damage it can deal.
  * @author Team Red
  *
  */
-
 import java.util.Scanner;
 import java.util.Hashtable;
 import java.util.ArrayList;

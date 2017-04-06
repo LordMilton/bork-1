@@ -2,11 +2,10 @@
  * 
  */
 
-/**
+/** InventoryCommand deals with any Commands relating to a player checking the contents of their inventory.
  * @author Team Red
  *
  */
-
 import java.util.ArrayList;
 
 class InventoryCommand extends Command {

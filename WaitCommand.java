@@ -2,7 +2,7 @@
  * 
  */
 
-/**
+/** WaitCommand deals with any Commands relating to a player waiting to pass time.
  * @author Team Red
  *
  */

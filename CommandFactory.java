@@ -2,18 +2,13 @@
  * 
  */
 
-/**
+/** CommandFactory parses through given text to look for and instantiate Commands appropriately
  * @author Team Red
  *
  */
-
 import java.util.List;
 import java.util.Arrays;
 
-/** Constructor for CommandFactory class
- * 
- * 
- * */
 public class CommandFactory {
 
     private static CommandFactory theInstance;
@@ -26,7 +21,11 @@ public class CommandFactory {
         }
         return theInstance;
     }
-
+    
+    /** Constructor for CommandFactory class
+     * 
+     * 
+     */
     private CommandFactory() {
     }
 

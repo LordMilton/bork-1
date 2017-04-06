@@ -2,7 +2,7 @@
  * 
  */
 
-/**
+/** HealthCommand deals with any Commands relating to a player checking their health.
  * @author Team Red
  *
  */

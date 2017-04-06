@@ -2,7 +2,7 @@
  * 
  */
 
-/**
+/** SaveCommand deals with any Commands relating to saving a bork game.
  * @author Team Red
  *
  */

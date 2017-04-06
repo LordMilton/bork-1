@@ -2,7 +2,7 @@
  * 
  */
 
-/**
+/** MovementCommand deals with any Command relating to moving between Rooms.
  * @author Team Red
  *
  */

@@ -2,11 +2,11 @@
  * 
  */
 
-/**
+/** Daytime keeps track of the current time in the game and the light that is appropriate for that time. It also keeps
+ * track of the number of days that have passed.
  * @author Team Red
  *
  */
-
 public class Daytime {
 	
 	private static int light; //light value

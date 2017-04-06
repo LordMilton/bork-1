@@ -2,7 +2,8 @@
  * 
  */
 
-/**
+/** Combat deals with attacks between NPCs and players. It calculates damage, accuracy, and damages players and NPCs
+ * appropriately
  * @author Team Red
  *
  */

@@ -2,11 +2,10 @@
  * 
  */
 
-/**
+/** Exits hold information related to being able to move from one Room to another in a bork game.
  * @author Team Red
  *
  */
-
 import java.util.Scanner;
 
 public class Exit {

@@ -2,7 +2,7 @@
  * 
  */
 
-/**
+/** TradeCommand deals with any Commands relating to the player trying to trade an Item with an NPC.
  * @author Team Red
  *
  */

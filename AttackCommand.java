@@ -2,7 +2,7 @@
  * 
  */
 
-/**
+/** AttackCommand deals with any Command relating to the attacking of an NPC or a player.
  * @author Team Red
  *
  */

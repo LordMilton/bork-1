@@ -2,7 +2,8 @@
  * 
  */
 
-/**
+/** ItemSpecificCommand deals with any Command relating to interacting with an Object. This does not including attacking
+ * with an object.
  * @author Team Red
  *
  */

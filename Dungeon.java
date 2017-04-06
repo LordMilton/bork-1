@@ -2,11 +2,11 @@
  * 
  */
 
-/**
+/** Dungeon contains the Rooms, Items, and any other information related to representing a dungeon in a bork game. It
+ * also holds the names of Files relating to the current game.
  * @author Team Red
  *
  */
-
 import java.util.Hashtable;
 import java.util.Scanner;
 import java.io.IOException;

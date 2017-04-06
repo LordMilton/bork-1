@@ -2,7 +2,8 @@
  * 
  */
 
-/**
+/** TakeCommand deals with any Commands relating to taking an item from a Dungeon and putting it in the player's
+ * inventory
  * @author Team Red
  *
  */
