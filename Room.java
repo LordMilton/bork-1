@@ -88,7 +88,9 @@ public class Room {
         }
     }
 
-    // Common object initialization tasks.
+    /** Common object initialization tasks.
+     * 
+     */
     private void init() {
         contents = new ArrayList<Item>();
         exits = new ArrayList<Exit>();
