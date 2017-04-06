@@ -39,6 +39,7 @@ public class Dungeon {
     private Room entry;
     private Hashtable<String,Room> rooms;
     private Hashtable<String,Item> items;
+    private Hashtable<String,NPC> npcs;
     private String filename;
 
     Dungeon(String name, Room entry) {
@@ -134,16 +135,18 @@ public class Dungeon {
         s.close();
     }
     
-    // Common object initialization tasks, regardless of which constructor
-    // is used.
+    /** Common object initialization tasks, regardless of which constructor is used.
+     * 
+     */
     private void init() {
         rooms = new Hashtable<String,Room>();
         items = new Hashtable<String,Item>();
     }
 
-    /*
-     * Store the current (changeable) state of this dungeon to the writer
-     * passed.
+    /** Store the current (changeable) state of this dungeon using the parameter Writer.
+     * 
+     * @param w The Writer to use when writing the saved information to the .sav File
+     * @throws IOException
      */
     void storeState(PrintWriter w) throws IOException {
         w.println(FILENAME_LEADER + getFilename());
@@ -154,9 +157,10 @@ public class Dungeon {
         w.println(TOP_LEVEL_DELIM);
     }
 
-    /*
-     * Restore the (changeable) state of this dungeon to that reflected in the
-     * reader passed.
+    /** Restore the (changeable) state of this dungeon to that reflected in the Scanner passed.
+     * 
+     * @param s The Scanner containing the .sav File to read from
+     * @throws GameState.IllegalSaveFormatException If the .sav File is improperly formatted
      */
     void restoreState(Scanner s) throws GameState.IllegalSaveFormatException {
 
@@ -199,5 +203,15 @@ public class Dungeon {
             throw new Item.NoItemException();
         }
         return items.get(primaryItemName);
+    }
+    
+    /** Searches for and return an NPC in the Dungeon going by the parameter name
+     * 
+     * @param npcName Name of the NPC to search for
+     * @return The NPC with the parameter name if it exists in the Dungeon
+     * @throws NPC.NoNPCException If there is no NPC that goes by the parameter name
+     */
+    public NPC getNPC(String npcName) throws NPC.NoNPCException {
+    	
     }
 }
