@@ -21,7 +21,7 @@ public class Daytime {
 	 * 
 	 * 
 	 * */
-	public static void Daytime(){
+	public Daytime(){
 		light = 0;
 		currentmin = 0;
 		currenthour = 0;
