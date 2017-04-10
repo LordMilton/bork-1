@@ -62,7 +62,7 @@ public class Item {
 	 */
 	boolean getIsAWeapon()
 	{
-
+		return isAWeapon;
 	}
 	
 	/** Returns the Item's damage stat
@@ -71,7 +71,7 @@ public class Item {
 	 */
 	int getDamage()
 	{
-		
+		return damage;
 	}
 	
 	/** Finds a list of events applying to a specific verb
