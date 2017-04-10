@@ -27,7 +27,7 @@ public class Daytime {
 		currenthour = 0;
 	}
 	
-	/** adds time (2 min) after each action to determine the light value
+	/** Adds time (2 min) after each action to determine the light value
 	 * 
 	 * 
 	 * */
@@ -127,7 +127,7 @@ public class Daytime {
 	
 	/** Returns the time for general use
 	 * 
-	 * 
+	 * @return Current time in format "<hour>:<minute>"
 	 * */
 	public static String getTime(){
 		
