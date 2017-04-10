@@ -50,7 +50,7 @@ class NPC {
 	 */
 	public String getName()
 	{
-		
+		return name;
 	}
 	
 	/** Returns whether or not the NPC is currently alive
@@ -59,7 +59,7 @@ class NPC {
 	 */
 	public boolean getIsAlive()
 	{
-		
+		return isAlive;
 	}
 	
 	/** Returns whether or not the NPC is hostile to the player
@@ -68,7 +68,7 @@ class NPC {
 	 */
 	public boolean getIsHostile()
 	{
-		
+		return isHostile;
 	}
 	
 	/** Returns the Room the NPC is currently in, null if it has not spawned yet
@@ -77,7 +77,7 @@ class NPC {
 	 */
 	public Room getCurrentRoom()
 	{
-		
+		return currentRoom;
 	}
 	
 	/** A list of the names of the Item's in the NPC's inventory
@@ -105,7 +105,7 @@ class NPC {
 	 */
 	public void addToInventory(Item item)
 	{
-		
+		inventory.add(item);
 	}
 	
 	/** Removes an Item from the NPC's inventory
@@ -114,7 +114,7 @@ class NPC {
 	 */
 	private void removeFromInventory(Item item)
 	{
-		
+		inventory.remove(item);
 	}
 	
 	/** Returns an Item from the NPC's inventory going by the parameter name
