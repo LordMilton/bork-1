@@ -49,9 +49,9 @@ public class GameState {
 
     private GameState() {
         inventory = new ArrayList<Item>();
-        playerScore = 0;
-        playerHealth = 0;
-        playerIsDead = false;
+        adventurersScore = 0;
+        adventurersHealth = 0;
+        adventurerIsDead = false;
     }
 
     /** Restores the state of a Bork game using the parameter .sav File name. Retrieves Rooms' beenHere statuses, Rooms'
