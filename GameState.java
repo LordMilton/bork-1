@@ -36,9 +36,9 @@ public class GameState {
     private Dungeon dungeon;
     private ArrayList<Item> inventory;
     private Room adventurersCurrentRoom;
-    private int playerScore;
-    private int playerHealth;
-    private boolean playerIsDead;
+    private int adventurersScore;
+    private int adventurersHealth;
+    private boolean adventurerIsDead;
 
     static synchronized GameState instance() {
         if (theInstance == null) {
@@ -236,17 +236,40 @@ public class GameState {
         return dungeon;
     }
  
-  //change health @param integer
- // this.health += integer
- 
- //@return health
- //gets health and returns integer
- 
- //change Score @integer
- //Score += integer
- 
- //@return Score
- //score += integer
- 
+    /** Adjusts the player's health by the parameter amount
+     * 
+     * @param change Amount to change the player's health by (negative to reduce health)
+     */
+    void changeHealth(int change)
+    {
+    	adventurersHealth += change;
+    }
+    
+    /** Adjusts the player's score by the parameter amount
+     * 
+     * @param change Amount to change the player's score by (negative to reduce score)
+     */
+    void changeScore(int change)
+    {
+    	adventurersScore += change;
+    }
+    
+    /** Returns the player's current health
+     * 
+     * @return adventurersHealth
+     */
+    int getAdventurersHealth()
+    {
+    	return adventurersHealth;
+    }
+    
+    /** Returns the player's current score
+     * 
+     * @return adventurersScore
+     */
+    int getAdventurersScore()
+    {
+    	return adventurersScore;
+    }
 
 }
