@@ -54,15 +54,15 @@ public class GameState {
         playerIsDead = false;
     }
 
-    /*
-    * @throws IllegalSaveFormatException, Dungeon.IllegalDungeonFormatException
-    *Creates a new Scanner to read in our *correct* save file,
-    * raeds dungeonFileLine and checks if correct name against Dungeon.FILENAME_LEADER,
-    * passes Scanner to Dungeon constructor to restore previous dungeon used
-    * next throws away "Adventurer:" line
-    * reads in adventureres Current Room
-    * gets current list of items in inventory
-    */
+    /** Restores the state of a Bork game using the parameter .sav File name. Retrieves Rooms' beenHere statuses, Rooms'
+     * inventories, player's current Room, and player's inventory
+     * 
+     * @param filename Name of the .sav File to restore the game from
+     * @throws FileNotFoundException If the parameter File name is of a non-existent File
+     * @throws IllegalSaveFormatException If the .sav File is formatted incorrectly and cannot be parsed
+     * @throws Dungeon.IllegalDungeonFormatException If the corresponding .bork File is formatted incorrectly and cannot
+     * be parsed
+     */
     void restore(String filename) throws FileNotFoundException,
         IllegalSaveFormatException, Dungeon.IllegalDungeonFormatException {
 
