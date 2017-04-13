@@ -44,6 +44,9 @@ public class CommandFactory {
         if (verb.equals("take")) {
             return new TakeCommand(noun);
         }
+        if (verb.equals("wait")) {
+            Daytime.addTime();
+        }
         if (verb.equals("drop")) {
             return new DropCommand(noun);
         }
