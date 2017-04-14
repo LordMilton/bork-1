@@ -7,7 +7,6 @@
  *
  */
 class WaitCommand extends Command{
-	private int timeToWait;
 	
 	/** Instantiates a WaitCommand with the parameter time as the time the Player intends to wait
 	 * 
@@ -23,6 +22,7 @@ class WaitCommand extends Command{
 	 */
 	String execute()
 	{
-		
+		Daytime.addTime();
+		return("You relax for a couple of minutes.");
 	}
 }
