@@ -44,9 +44,6 @@ public class CommandFactory {
         if (verb.equals("take")) {
             return new TakeCommand(noun);
         }
-        if (verb.equals("wait")) {
-            return new WaitCommand();
-        }
         if (verb.equals("drop")) {
             return new DropCommand(noun);
         }
@@ -58,6 +55,21 @@ public class CommandFactory {
         }
         if (parts.length == 2) {
             return new ItemSpecificCommand(verb, noun);
+        }
+        
+        //wait command for time
+        if (verb.equals("wait")) {
+            return new WaitCommand();
+        }
+        
+        //health command
+        if (verb.equals("health")) {
+            return new HealthCommand();
+        }
+        
+        //score command
+        if (verb.equals("score")) {
+            return new ScoreCommand();
         }
         return new UnknownCommand(command);
     }
