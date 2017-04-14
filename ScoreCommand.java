@@ -21,6 +21,9 @@ class ScoreCommand extends Command{
 	 */
 	String execute()
 	{
+		GameState state = GameState.instance();
+		int currScore = state.getAdventurersScore();
 		
+		return("Your score is "+ currScore);
 	}
 }
