@@ -1,0 +1,40 @@
+Group Bork v1.0
+save data
+Dungeon file: trinklev3.bork
+Room states:
+Stephen's office:
+beenHere=true
+---
+Room B6:
+beenHere=true
+Contents: DrPepper
+---
+Basement hallway:
+beenHere=true
+---
+Rotunda balcony:
+beenHere=false
+Contents: chainsaw,magicWand
+---
+Rotunda:
+beenHere=true
+Contents: StarWarsToy
+---
+===
+Adventurer:
+Current room: Stephen's office
+Inventory: WawaTravelMug,donut
+Health: 55
+===
+Time:600
+===
+NPC States:
+troll
+Current room: Basement hallway
+Health:0
+---
+imp
+Current room: Stephen's office
+Health:10
+---
+===
