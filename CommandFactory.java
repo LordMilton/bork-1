@@ -59,7 +59,8 @@ public class CommandFactory {
         
         //wait command for time
         if (verb.equals("wait")) {
-            return new WaitCommand();
+			int time = Integer.parseInt(noun);
+            return new WaitCommand(time);
         }
         
         //health command
@@ -71,6 +72,12 @@ public class CommandFactory {
         if (verb.equals("score")) {
             return new ScoreCommand();
         }
+        
+        //trade command
+        //if (verb.equals("trade")) {
+            //return new TradeCommand();
+        //}
+        
         return new UnknownCommand(command);
     }
 }
