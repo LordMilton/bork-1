@@ -28,14 +28,16 @@ public class Item {
 
 		messages = new Hashtable<String,String>();
 
-		// Read item name.
-		primaryName = s.nextLine();
+		// Read item name
+		String nextLine = s.nextLine();
+		String[] nextLineParsed = nextLine.split(" ");
+		primaryName = nextLineParsed[0];
 		if (primaryName.equals(Dungeon.TOP_LEVEL_DELIM)) {
 			throw new NoItemException();
 		}
 
 		// Read item weight.
-		weight = Integer.valueOf(s.nextLine());
+		weight = Integer.valueOf(nextLineParsed[1]);
 
 		// Read and parse verbs lines, as long as there are more.
 		String verbLine = s.nextLine();
@@ -44,8 +46,20 @@ public class Item {
 				throw new Dungeon.IllegalDungeonFormatException("No '" +
 						Dungeon.SECOND_LEVEL_DELIM + "' after item.");
 			}
+			//Gets an array of the verb and events, then the message
 			String[] verbParts = verbLine.split(":");
-			messages.put(verbParts[0],verbParts[1]);
+			//Gets an array of the verb, then the events
+			String[] verbAndEvents = verbParts[0].split("[");
+			//Gets an array of the events
+			String[] eventsParsed = verbAndEvents[1].substring(0,verbAndEvents[1].length()).split(",");
+			
+			ArrayList<String> eventsList = new ArrayList<>();
+			for(String event:eventsParsed)
+			{
+				eventsList.add(event);
+			}
+			this.events.put(verbAndEvents[0], eventsList);
+			messages.put(verbAndEvents[0],verbParts[1]);
 
 			verbLine = s.nextLine();
 		}
@@ -81,7 +95,7 @@ public class Item {
 	 */
 	ArrayList<String> getEventForVerb(String verb)
 	{
-		
+		return events.get(verb);
 	}
 	
 
