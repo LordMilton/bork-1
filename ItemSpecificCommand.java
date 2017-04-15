@@ -7,7 +7,7 @@
  * @author Team Red
  *
  */
-
+import java.util.ArrayList;
 class ItemSpecificCommand extends Command {
 
     private String verb;
@@ -29,7 +29,12 @@ class ItemSpecificCommand extends Command {
         }
         
         String msg = itemReferredTo.getMessageForVerb(verb);
-        return (msg == null ? 
-            "Sorry, you can't " + verb + " the " + noun + "." : msg) + "\n";
+        ArrayList<String> events = itemReferredTo.getEventForVerb(verb);
+        
+        if(msg == null)
+        	return ("Sorry, you can't " + verb + " the " + noun + "." + "\n");
+            
+        EventFactory.execute(itemReferredTo, events);
+        return msg;
     }
 }

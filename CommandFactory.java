@@ -56,6 +56,28 @@ public class CommandFactory {
         if (parts.length == 2) {
             return new ItemSpecificCommand(verb, noun);
         }
+        
+        //wait command for time
+        if (verb.equals("wait")) {
+			int time = Integer.parseInt(noun);
+            return new WaitCommand(time);
+        }
+        
+        //health command
+        if (verb.equals("health")) {
+            return new HealthCommand();
+        }
+        
+        //score command
+        if (verb.equals("score")) {
+            return new ScoreCommand();
+        }
+        
+        //trade command
+        //if (verb.equals("trade")) {
+            //return new TradeCommand();
+        //}
+        
         return new UnknownCommand(command);
     }
 }

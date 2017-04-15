@@ -238,7 +238,7 @@ public class GameState {
  
     /** Adjusts the player's health by the parameter amount
      * 
-     * @param change Amount to change the player's health by (negative to reduce health)
+     * @param change Amount to change the player's health by (negative to increase health)
      */
     void changeHealth(int change)
     {
@@ -271,5 +271,24 @@ public class GameState {
     {
     	return adventurersScore;
     }
-
+    
+    void obliterateItem(Item item)
+    {
+    	if(!inventory.remove(item))
+    	{
+    		GameState.instance().getDungeon().obliterateItem(item);
+    	}
+    }
+    
+    void transformItem(Item itemToDestroy, Item itemToAdd)
+    {
+    	if(!inventory.remove(itemToDestroy))
+    	{
+    		GameState.instance().getDungeon().transformItem(itemToDestroy, itemToAdd);
+    	}
+    	else
+    	{
+    		inventory.add(itemToAdd);
+    	}
+    }
 }

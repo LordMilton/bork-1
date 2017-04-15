@@ -6,8 +6,10 @@
  * @author Team Red
  *
  */
+
 class WaitCommand extends Command{
-	private int timeToWait;
+	
+	private int minTime;
 	
 	/** Instantiates a WaitCommand with the parameter time as the time the Player intends to wait
 	 * 
@@ -15,7 +17,7 @@ class WaitCommand extends Command{
 	 */
 	WaitCommand(int time)
 	{
-		
+		minTime = time;
 	}
 	
 	/**
@@ -23,6 +25,10 @@ class WaitCommand extends Command{
 	 */
 	String execute()
 	{
-		
+		while(minTime > 0){
+			Daytime.addTime();
+			minTime = minTime - 2;
+		}
+		return("You relax for a couple of minutes.");
 	}
 }

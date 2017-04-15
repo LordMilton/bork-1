@@ -196,4 +196,19 @@ public class Room {
     ArrayList<Item> getContents() {
         return contents;
     }
+    
+    boolean obliterateItem(Item item)
+    {
+    	return contents.remove(item);
+    }
+    
+    boolean transformItem(Item itemToDestroy, Item itemToAdd)
+    {
+    	if(obliterateItem(itemToDestroy))
+    	{
+    		add(itemToAdd);
+    		return true;
+    	}
+    	return false;
+    }
 }
