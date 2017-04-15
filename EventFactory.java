@@ -19,7 +19,7 @@ public class EventFactory {
 	{
 		for(String event:events)
 		{
-			String[] eventParsed = event.split("(");
+			String[] eventParsed = event.split("\\(");
 			
 			if(eventParsed[0].equalsIgnoreCase("Score"))
 			{
@@ -29,7 +29,7 @@ public class EventFactory {
 			else if(eventParsed[0].equalsIgnoreCase("Wound"))
 			{
 				//Argument is wound amount
-				item.woundEvent(Integer.parseInt(eventParsed[1].substring(0, eventParsed[1].length())));
+				item.woundEvent(Integer.parseInt(eventParsed[1].substring(0, eventParsed[1].length()-1)));
 			}
 			else if(eventParsed[0].equalsIgnoreCase("Die"))
 			{

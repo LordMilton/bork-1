@@ -70,7 +70,7 @@ public class Item {
 			String[] eventsParsed = null;
 			if(verbAndEvents.length > 1)
 			{
-				eventsParsed = verbAndEvents[1].substring(0,verbAndEvents[1].length()).split(",");
+				eventsParsed = verbAndEvents[1].substring(0,verbAndEvents[1].length()-1).split(",");
 			}
 			
 			ArrayList<String> eventsList = new ArrayList<>();
