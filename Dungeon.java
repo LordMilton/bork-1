@@ -7,12 +7,14 @@
  * @author Team Red
  *
  */
-import java.util.Hashtable;
-import java.util.Scanner;
-import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.Scanner;
+import java.util.Set;
 
 public class Dungeon {
 
@@ -212,6 +214,36 @@ public class Dungeon {
      * @throws NPC.NoNPCException If there is no NPC that goes by the parameter name
      */
     public NPC getNPC(String npcName) throws NPC.NoNPCException {
-    	
+    	//return null;
+    }
+    
+    void obliterateItem(Item item)
+    {
+    	Set<String> roomNames = rooms.keySet();
+    	for(String roomName:roomNames)
+    	{
+    		if(rooms.get(roomName).obliterateItem(item))
+    			break;
+    	}
+    }
+    
+    void transformItem(Item itemToDestroy, Item itemToAdd)
+    {
+    	Set<String> roomNames = rooms.keySet();
+    	for(String roomName:roomNames)
+    	{
+    		if(rooms.get(roomName).transformItem(itemToDestroy, itemToAdd))
+    			break;
+    	}
+    }
+    
+    void teleportAdventurer()
+    {
+    	Set<String> roomNames = rooms.keySet();
+    	//Needed an ordered list (Sets have no order) for random Room picking
+    	ArrayList<String> roomNamesList = (ArrayList<String>)roomNames;
+    	//Finds a random room and throws the adventurer into it
+    	int roomNumber = ((int)(Math.random()*roomNames.size()));
+    	GameState.instance().setAdventurersCurrentRoom(rooms.get(roomNamesList.get(roomNumber)));
     }
 }

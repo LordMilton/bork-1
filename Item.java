@@ -108,4 +108,43 @@ public class Item {
 	public String toString() {
 		return primaryName;
 	}
+	
+	void scoreEvent(int addToScore)
+	{
+		GameState.instance().changeScore(addToScore);
+	}
+	
+	void woundEvent(int wound)
+	{
+		GameState.instance().changeHealth(wound);
+	}
+	
+	void dieEvent()
+	{
+		GameState.instance().changeHealth(Integer.MAX_VALUE);
+	}
+	
+	//TODO
+	//This method has WAAAAYYY too much power and needs to be fixed
+	void winEvent()
+	{
+		System.out.println("You WIN!!!");
+		System.exit(0);
+	}
+	
+	void disappearEvent()
+	{
+		GameState.instance().obliterateItem(this);
+	}
+	
+	void transformEvent(Item newItem)
+	{
+		GameState instance = GameState.instance();
+		instance.transformItem(this, newItem);
+	}
+	
+	void teleportEvent()
+	{
+		GameState.instance().getDungeon().teleportAdventurer();
+	}
 }
