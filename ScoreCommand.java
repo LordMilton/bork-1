@@ -44,7 +44,7 @@ class ScoreCommand extends Command{
 		//int currScore = state.getAdventurersScore();
 		
 		//return("Your score is "+ currScore);
-		return "You have accumulated" + score + " points."
+		return "You have accumulated " + score + " points."
                 + "This gives you a rank of " + this.rank + ".";
 	}
 }
