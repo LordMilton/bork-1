@@ -50,7 +50,7 @@ public class GameState {
     private GameState() {
         inventory = new ArrayList<Item>();
         adventurersScore = 0;
-        adventurersHealth = 0;
+        adventurersHealth = 50;
         adventurerIsDead = false;
     }
 
