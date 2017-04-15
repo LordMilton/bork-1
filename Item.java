@@ -27,6 +27,7 @@ public class Item {
 	Dungeon.IllegalDungeonFormatException {
 
 		messages = new Hashtable<String,String>();
+		events = new Hashtable<String, ArrayList<String>>();
 
 		// Read item name
 		String nextLine = s.nextLine();
@@ -41,6 +42,21 @@ public class Item {
 
 		// Read and parse verbs lines, as long as there are more.
 		String verbLine = s.nextLine();
+		if(verbLine.startsWith("weapon"))
+		{
+			isAWeapon = true;
+			String[] weaponLineParsed = verbLine.split(":");
+			if(weaponLineParsed.length < 2)
+			{
+				throw new Dungeon.IllegalDungeonFormatException("No damage stat on weapon line.");
+			}
+			try{
+				damage = Integer.parseInt(weaponLineParsed[1]);
+			}catch(Exception e){
+				throw new Dungeon.IllegalDungeonFormatException("No damage stat on weapon line or damage stat is."+
+																"is not an integer.");
+			}
+		}
 		while (!verbLine.equals(Dungeon.SECOND_LEVEL_DELIM)) {
 			if (verbLine.equals(Dungeon.TOP_LEVEL_DELIM)) {
 				throw new Dungeon.IllegalDungeonFormatException("No '" +
@@ -49,16 +65,24 @@ public class Item {
 			//Gets an array of the verb and events, then the message
 			String[] verbParts = verbLine.split(":");
 			//Gets an array of the verb, then the events
-			String[] verbAndEvents = verbParts[0].split("[");
+			String[] verbAndEvents = verbParts[0].split("\\[");
 			//Gets an array of the events
-			String[] eventsParsed = verbAndEvents[1].substring(0,verbAndEvents[1].length()).split(",");
+			String[] eventsParsed = null;
+			if(verbAndEvents.length > 1)
+			{
+				eventsParsed = verbAndEvents[1].substring(0,verbAndEvents[1].length()).split(",");
+			}
 			
 			ArrayList<String> eventsList = new ArrayList<>();
-			for(String event:eventsParsed)
+			if(eventsParsed != null)
 			{
-				eventsList.add(event);
+				for(String event:eventsParsed)
+				{
+					eventsList.add(event);
+				}
 			}
 			this.events.put(verbAndEvents[0], eventsList);
+			System.out.println(verbLine);
 			messages.put(verbAndEvents[0],verbParts[1]);
 
 			verbLine = s.nextLine();
