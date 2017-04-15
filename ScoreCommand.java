@@ -45,6 +45,6 @@ class ScoreCommand extends Command{
 		
 		//return("Your score is "+ currScore);
 		return "You have accumulated " + score + " points."
-                + "This gives you a rank of " + this.rank + ".";
+                + "This gives you a rank of " + this.rank + ".\n";
 	}
 }
