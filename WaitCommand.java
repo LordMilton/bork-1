@@ -20,6 +20,11 @@ class WaitCommand extends Command{
 		minTime = time;
 	}
 	
+	WaitCommand()
+	{
+		new WaitCommand(2);
+	}
+	
 	/**
 	 * @override From Command
 	 */

@@ -26,8 +26,7 @@ public class CommandFactory {
      * 
      * 
      */
-    private CommandFactory() {
-    }
+    private CommandFactory() {}
 
     /** Creates command for user interaction with environment
     * 
@@ -53,11 +52,17 @@ public class CommandFactory {
         if (MOVEMENT_COMMANDS.contains(verb)) {
             return new MovementCommand(verb);
         }
+        //Wait and Item Specific Commands both can take a verb and a noun
         if (parts.length == 2) {
+        	//wait command for time
+            if (verb.equals("wait")) {
+    			int time = Integer.parseInt(noun);
+                return new WaitCommand(time);
+            }
             return new ItemSpecificCommand(verb, noun);
         }
         
-        //wait command for time
+        //Wait command that has no specified wait time
         if (verb.equals("wait")) {
 			int time = Integer.parseInt(noun);
             return new WaitCommand(time);
