@@ -165,8 +165,7 @@ public class Item {
 	//This method has WAAAAYYY too much power and needs to be fixed
 	void winEvent()
 	{
-		System.out.println("You WIN!!!");
-		System.exit(0);
+		GameState.instance().changeScore(Integer.MAX_VALUE);
 	}
 	
 	/** Item event that removes this Item from the Dungeon
