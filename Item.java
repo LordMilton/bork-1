@@ -132,21 +132,35 @@ public class Item {
 		return primaryName;
 	}
 	
+	/** Item event that adds the parameter score to the player's current score
+	 * 
+	 * @param addToScore Score to add to player's current score
+	 */
 	void scoreEvent(int addToScore)
 	{
 		GameState.instance().changeScore(addToScore);
 	}
 	
+	/** Item event that lowers the player's health by the parameter amount
+	 * 
+	 * @param wound Amount to lower player's health by, if negative, player's health is increased
+	 */
 	void woundEvent(int wound)
 	{
 		GameState.instance().changeHealth(wound);
 	}
 	
+	/** Item event that kills the player by lowering player's health as low as it can possibly go
+	 * 
+	 */
 	void dieEvent()
 	{
 		GameState.instance().changeHealth(Integer.MAX_VALUE);
 	}
 	
+	/** Item event that causes the player to win
+	 * 
+	 */
 	//TODO
 	//This method has WAAAAYYY too much power and needs to be fixed
 	void winEvent()
@@ -155,17 +169,27 @@ public class Item {
 		System.exit(0);
 	}
 	
+	/** Item event that removes this Item from the Dungeon
+	 * 
+	 */
 	void disappearEvent()
 	{
 		GameState.instance().obliterateItem(this);
 	}
 	
+	/** Item event that removes this Item from the Dungeon and replaces it with the parameter Item
+	 * 
+	 * @param newItem Item to replace this Item with
+	 */
 	void transformEvent(Item newItem)
 	{
 		GameState instance = GameState.instance();
 		instance.transformItem(this, newItem);
 	}
 	
+	/** Item event that moves the player to a random Room in the Dungeon
+	 * 
+	 */
 	void teleportEvent()
 	{
 		GameState.instance().getDungeon().teleportAdventurer();
