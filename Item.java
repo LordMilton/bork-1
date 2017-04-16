@@ -82,7 +82,6 @@ public class Item {
 				}
 			}
 			this.events.put(verbAndEvents[0], eventsList);
-			System.out.println(verbLine);
 			messages.put(verbAndEvents[0],verbParts[1]);
 
 			verbLine = s.nextLine();
