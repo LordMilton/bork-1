@@ -34,6 +34,8 @@ class ItemSpecificCommand extends Command {
         if(msg == null)
         	return ("Sorry, you can't " + verb + " the " + noun + "." + "\n");
             
+        //TODO
+        //Get msg to print before Item's winEvent() method ends the game.
         EventFactory.execute(itemReferredTo, events);
         return msg;
     }
