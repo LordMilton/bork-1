@@ -46,6 +46,7 @@ public class EventFactory {
 			else if(eventParsed[0].equalsIgnoreCase("Transform"))
 			{
 				try{
+					//Argument is Item to transform into
 					item.transformEvent(GameState.instance().getDungeon().getItem(eventParsed[1].substring(0, eventParsed[1].length()-1)));
 				}catch(Item.NoItemException e){
 					System.err.println("A transform event for "+ item.getPrimaryName() +" had a non-existent Item to"+
@@ -54,7 +55,6 @@ public class EventFactory {
 			}
 			else if(eventParsed[0].equalsIgnoreCase("Teleport"))
 			{
-				//Argument is Item to transform into
 				item.teleportEvent();
 			}
 		}

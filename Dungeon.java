@@ -241,7 +241,11 @@ public class Dungeon {
     {
     	Set<String> roomNames = rooms.keySet();
     	//Needed an ordered list (Sets have no order) for random Room picking
-    	ArrayList<String> roomNamesList = (ArrayList<String>)roomNames;
+    	ArrayList<String> roomNamesList = new ArrayList<>();
+    	for(String roomName:roomNames)
+    	{
+    		roomNamesList.add(roomName);
+    	}
     	//Finds a random room and throws the adventurer into it
     	int roomNumber = ((int)(Math.random()*roomNames.size()));
     	GameState.instance().setAdventurersCurrentRoom(rooms.get(roomNamesList.get(roomNumber)));
