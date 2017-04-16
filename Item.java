@@ -161,8 +161,6 @@ public class Item {
 	/** Item event that causes the player to win
 	 * 
 	 */
-	//TODO
-	//This method has WAAAAYYY too much power and needs to be fixed
 	void winEvent()
 	{
 		GameState.instance().changeScore(Integer.MAX_VALUE);
