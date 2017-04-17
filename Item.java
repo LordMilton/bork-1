@@ -125,7 +125,7 @@ public class Item {
 	String getPrimaryName() { return primaryName; }
 
 	public String getMessageForVerb(String verb) {
-		return messages.get(verb);
+		return (messages.get(verb) +"\n");
 	}
 
 	public String toString() {
