@@ -197,11 +197,22 @@ public class Room {
         return contents;
     }
     
+    /** Removes the parameter Item from this Room if it's there
+     * 
+     * @param item Item to remove from the Dungeon
+     * @return True if the parameter Item is in this Room and was removed, false otherwise
+     */
     boolean obliterateItem(Item item)
     {
     	return contents.remove(item);
     }
     
+    /** Removes the parameter itemToDestory from this Room if it's there, then replaces it with the parameter itemToAdd
+     * 
+     * @param itemToDestroy Item to remove from the Room
+     * @param itemToAdd Item with which to replace itemToDestroy
+     * @return True if the parameter itemToDestory is in this Room and was replaced, false otherwise
+     */
     boolean transformItem(Item itemToDestroy, Item itemToAdd)
     {
     	if(obliterateItem(itemToDestroy))

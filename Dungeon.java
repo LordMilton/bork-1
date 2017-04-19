@@ -217,6 +217,10 @@ public class Dungeon {
     	//return null;
     }
     
+    /** Completely removes the parameter Item from this Dungeon
+     * 
+     * @param item Item to remove from this Dungeon
+     */
     void obliterateItem(Item item)
     {
     	Set<String> roomNames = rooms.keySet();
@@ -227,6 +231,11 @@ public class Dungeon {
     	}
     }
     
+    /** Completely removes the parameter itemToDestroy from this Dungeon and replaces it with the parameter itemToAdd
+     * 
+     * @param itemToDestroy Item to remove from this Dungeon
+     * @param itemToAdd Item with which to replace the parameter itemToDestroy
+     */
     void transformItem(Item itemToDestroy, Item itemToAdd)
     {
     	Set<String> roomNames = rooms.keySet();
@@ -237,6 +246,9 @@ public class Dungeon {
     	}
     }
     
+    /** Teleports the player to a random Room in the Dungeon
+     * 
+     */
     void teleportAdventurer()
     {
     	Set<String> roomNames = rooms.keySet();

@@ -20,6 +20,9 @@ class WaitCommand extends Command{
 		minTime = time;
 	}
 	
+	/** Instantiates a WaitCommand with a wait time of 2 (in-game minutes)
+	 * 
+	 */
 	WaitCommand()
 	{
 		new WaitCommand(2);
