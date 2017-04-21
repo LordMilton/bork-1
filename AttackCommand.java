@@ -8,14 +8,17 @@
  */
 class AttackCommand extends Command{
 	private Item weapon;
+	private NPC victim;
 	
 	/** Instantiates an AttackCommand using the parameter weapon
 	 * 
 	 * @param weapon Weapon that is being used to attack
+	 * @param victim NPC that is being attacked, null implies that the player is being attacked
 	 */
-	AttackCommand(Item weapon)
+	AttackCommand(Item weapon, NPC victim)
 	{
-		
+		this.weapon = weapon;
+		this.victim = victim;
 	}
 	
 	/**
@@ -23,6 +26,11 @@ class AttackCommand extends Command{
 	 */
 	String execute()
 	{
+		if(!weapon.getIsAWeapon())
+		{
+			return "You cannot attack with that.";
+		}
 		
+		return Combat.attack(weapon, victim);
 	}
 }
