@@ -128,6 +128,15 @@ class NPC {
 		
 	}
 	
+	/** Adjusts this NPC's health by the parameter amount
+     * 
+     * @param change Amount to change this NPC's health by (negative to increase health)
+     */
+	public void changeHealth(int wound)
+	{
+		health -= wound;
+	}
+	
 	/** Moves the NPC to a new Room
 	 * 
 	 * @return The Room the NPC moved to
