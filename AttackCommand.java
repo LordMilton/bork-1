@@ -22,7 +22,11 @@ class AttackCommand extends Command{
 		GameState state = GameState.instance();
 		if(weapon != null)
 		{
-			this.weapon = state.getItemFromInventoryNamed(weapon);
+			try{
+				this.weapon = state.getItemFromInventoryNamed(weapon);
+			}catch(Item.NoItemException e){
+				this.weapon = null;
+			}
 			weaponProvided = true;
 		}
 		else
@@ -31,7 +35,11 @@ class AttackCommand extends Command{
 		}
 		if(victim != null)
 		{
-			this.victim = state.getNPCInVicinityNamed(victim);
+			try{
+				this.victim = state.getNPCInVicinityNamed(victim);
+			}catch(NPC.NoNPCException e){
+				this.victim = null;
+			}
 			victimIsPlayer = false;
 		}
 		else
