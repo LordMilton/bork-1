@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  */
 class NPC {
-	class NoNPCException extends Exception {}
+	static class NoNPCException extends Exception {}
 	
 	private String name;
 	private Room currentRoom;
