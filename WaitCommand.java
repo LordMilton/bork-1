@@ -37,6 +37,6 @@ class WaitCommand extends Command{
 			Daytime.addTime();
 			minTime = minTime - 2;
 		}
-		return("You relax for a couple of minutes.");
+		return("You relax for a couple of minutes.\n");
 	}
 }

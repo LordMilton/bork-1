@@ -33,23 +33,23 @@ class Combat {
 			if(victim == null)
 			{
 				GameState.instance().changeHealth(weapon.getDamage());
-				return "You are hit with a "+ weapon.getPrimaryName() +".";
+				return "You are hit with a "+ weapon.getPrimaryName() +".\n";
 			}
 			else
 			{
 				victim.changeHealth(weapon.getDamage());
-				return "You hit the "+ victim.getName() +" with your "+ weapon.getPrimaryName() +".";
+				return "You hit the "+ victim.getName() +" with your "+ weapon.getPrimaryName() +".\n";
 			}
 		}
 		else
 		{
 			if(victim == null)
 			{
-				return "Your opponent attacks you and misses.";
+				return "Your opponent attacks you and misses.\n";
 			}
 			else
 			{
-				return "You attack the "+ victim.getName() +" with your "+ weapon.getPrimaryName() +" but you miss.";
+				return "You attack the "+ victim.getName() +" with your "+ weapon.getPrimaryName() +" but you miss.\n";
 			}
 		}
 	}
