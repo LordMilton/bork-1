@@ -26,6 +26,10 @@ class AttackCommand extends Command{
 	 */
 	String execute()
 	{
+		if(weapon == null)
+		{
+			return "Attack "+ victim +" with what?\n";
+		}
 		if(!weapon.getIsAWeapon())
 		{
 			return "You cannot attack with that.";
