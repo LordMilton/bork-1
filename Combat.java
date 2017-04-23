@@ -9,6 +9,7 @@
  */
 class Combat {
 	
+	//Raise this to 1 for perfect accuracy, Lower to 0 for perfect inaccuracy
 	static final double ACCURACY = .8; //Can be removed if accuracy is added to weapons
 	
 	/** Causes an attack upon the specified NPC (or the player) with the specified Item
