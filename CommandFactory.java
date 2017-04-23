@@ -59,9 +59,25 @@ public class CommandFactory {
     			int time = Integer.parseInt(noun);
                 return new WaitCommand(time);
             }
+            //In case of attack command with no weapon
+            if(verb.equals("attack")){
+            	return new AttackCommand(null, noun);
+            }
             return new ItemSpecificCommand(verb, noun);
         }
-        
+        if(parts.length == 3)
+        {
+        	//In case of attack command with no weapon but with a 'with'
+        	if(verb.equals("attack")){
+            	return new AttackCommand(null, noun);
+            }
+        }
+        if(parts.length == 4)
+        {
+        	if(verb.equals("attack")){
+            	return new AttackCommand(parts[3], noun);
+            }
+        }
         //Wait command that has no specified wait time
         if (verb.equals("wait")) {
 		int time = Integer.parseInt(noun);
