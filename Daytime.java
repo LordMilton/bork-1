@@ -29,7 +29,7 @@ public class Daytime {
 	
 	/** Sets the in game time to something other than zero (midnight)
 	 * 
-	 * 
+	 * @param time_ String that is to be converted into ints to set the time
 	 * */
 	public static void setTime(String time_){
 		
