@@ -220,7 +220,7 @@ public class GameState {
      * @return The NPC with the parameter name as its name, if one is in the adventurersCurrentRoom
      * @throws NPC.NoNPCException If there is no NPC going by the parameter name in the adventurersCurrentRoom
      */
-    NPC getNPCFromVicinityNamed(String name) throws NPC.NoNPCException
+    NPC getNPCInVicinityNamed(String name) throws NPC.NoNPCException
     {
     	if(dungeon.getNPC(name).getCurrentRoom() == adventurersCurrentRoom)
     	{
