@@ -39,6 +39,7 @@ public class GameState {
     private int adventurersScore;
     private int adventurersHealth;
     private boolean adventurerIsDead;
+    private String currentTime;
 
     static synchronized GameState instance() {
         if (theInstance == null) {
@@ -52,6 +53,7 @@ public class GameState {
         adventurersScore = 0;
         adventurersHealth = 50;
         adventurerIsDead = false;
+        currentTime = Daytime.getTime();
     }
 
     /** Restores the state of a Bork game using the parameter .sav File name. Retrieves Rooms' beenHere statuses, Rooms'
