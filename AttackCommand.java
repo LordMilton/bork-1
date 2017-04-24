@@ -53,7 +53,7 @@ class AttackCommand extends Command{
 	 */
 	String execute()
 	{
-		if(!weaponProvided)
+		if(!weaponProvided && victim != null)
 		{
 			return "Attack "+ victim +" with what?\n";
 		}
