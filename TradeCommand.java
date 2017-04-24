@@ -72,5 +72,6 @@ public class TradeCommand extends Command{
 		if(npc.getIsHostile()){
 			return "Whoa buddy, they're not gonna let you do that.\n";
 		}
+		return null; //just making the return happy while working on it 
 	}
 }
