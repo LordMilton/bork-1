@@ -8,6 +8,7 @@
  */
 public class TradeCommand extends Command{
 	private NPC npc;
+	private boolean npcProvided;
 	private Item item;
 	private boolean itemProvided;
 	
@@ -18,8 +19,33 @@ public class TradeCommand extends Command{
 	 */
 	TradeCommand(String npc, String item)
 	{
-		this.npc = npc;
-		this.item = item;
+		GameState state = GameState.instance();
+		if(item != null)
+		{
+			try{
+				this.item = state.getItemFromInventoryNamed(item);
+			}catch(Item.NoItemException e){
+				this.item = null;
+			}
+			itemProvided = true;
+		}
+		else
+		{
+			itemProvided = false;
+		}
+		if(npc != null)
+		{
+			try{
+				this.npc = state.getNPCInVicinityNamed(npc);
+			}catch(NPC.NoNPCException e){
+				this.npc = null;
+			}
+			npcProvided = false;
+		}
+		else
+		{
+			npcProvided = true;
+		}
 	}
 	
 	/**
