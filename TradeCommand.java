@@ -9,16 +9,17 @@
 public class TradeCommand extends Command{
 	private NPC npc;
 	private Item item;
+	private boolean itemProvided;
 	
 	/** Instantiates a TradeCommand with the parameter Item to the parameter NPC
 	 * 
 	 * @param npc NPC to trade with
 	 * @param item Item to trade to the parameter NPC
 	 */
-	TradeCommand(NPC npc, Item item)
+	TradeCommand(String npc, String item)
 	{
-	this.npc = npc;
-	this.item = item;
+		this.npc = npc;
+		this.item = item;
 	}
 	
 	/**
@@ -26,7 +27,7 @@ public class TradeCommand extends Command{
 	 */
 	String execute()
 	{
-		if(npc.isHostle){
+		if(npc.getIsHostile()){
 			return "Whoa buddy, they're not gonna let you do that";
 		}
 		
