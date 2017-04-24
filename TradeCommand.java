@@ -53,9 +53,24 @@ public class TradeCommand extends Command{
 	 */
 	String execute()
 	{
-		if(npc.getIsHostile()){
-			return "Whoa buddy, they're not gonna let you do that";
+		if(!itemProvided)
+		{
+			return "What do you want to trade?\n";
 		}
-		
+		if(item == null)
+		{
+			return "You can't trade what you don't have!\n";
+		}
+		if(!npcProvided)
+		{
+			return "Whom do you want to trade with?\n";
+		}
+		if(npc == null)
+		{
+			return "You can't trade with something you can't see!\n";
+		}
+		if(npc.getIsHostile()){
+			return "Whoa buddy, they're not gonna let you do that.\n";
+		}
 	}
 }
