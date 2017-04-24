@@ -26,9 +26,9 @@ public class TradeCommand extends Command{
 	 */
 	String execute()
 	{
-		if(npc.isHostle){
+		if(this.npc.getIsHostile()){
 			return "Whoa buddy, they're not gonna let you do that";
 		}
-		
+		return null; //just making the return happy while working on it 
 	}
 }
