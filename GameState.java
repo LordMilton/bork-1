@@ -335,4 +335,8 @@ public class GameState {
     		inventory.add(itemToAdd);
     	}
     }
+    
+    void setTime(String savedTime){
+		Daytime.setTime(savedTime);
+	}
 }

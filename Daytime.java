@@ -27,6 +27,24 @@ public class Daytime {
 		currenthour = 0;
 	}
 	
+	/** Sets the in game time to something other than zero (midnight)
+	 * 
+	 * 
+	 * */
+	public static void setTime(String time_){
+		
+		//splits the string, assuming it is in "HH:MM", "H:MM", or "H:M" format
+		String[] times_ = time_.split(":");
+		
+		//parses the string to convert into ints
+		int hours_ = Integer.parseInt(times_[0]);
+		int mins_ = Integer.parseInt(times_[1]);
+		
+		//sets the time based on input
+		currenthour = hours_;
+		currentmin = mins_;
+	}
+	
 	/** Adds time (2 min) after each action to determine the light value
 	 * 
 	 * 
@@ -38,8 +56,8 @@ public class Daytime {
 		currentmin = currentmin + 2;
 		
 		//resets currentmin once it has hit 60
-		if(currentmin == 60){
-			currentmin = 0;
+		if(currentmin <= 60){
+			currentmin = currentmin - 60;
 			currenthour++;
 		}
 		
