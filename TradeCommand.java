@@ -17,7 +17,8 @@ public class TradeCommand extends Command{
 	 */
 	TradeCommand(NPC npc, Item item)
 	{
-		
+	this.npc = npc;
+	this.item = item;
 	}
 	
 	/**
@@ -25,6 +26,9 @@ public class TradeCommand extends Command{
 	 */
 	String execute()
 	{
+		if(npc.isHostle){
+			return "Whoa buddy, they're not gonna let you do that";
+		}
 		
 	}
 }
