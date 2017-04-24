@@ -214,7 +214,7 @@ public class Dungeon {
      * @throws NPC.NoNPCException If there is no NPC that goes by the parameter name
      */
     public NPC getNPC(String npcName) throws NPC.NoNPCException {
-    	//return null;
+    	return npcs.get(npcName);
     }
     
     /** Completely removes the parameter Item from this Dungeon
