@@ -63,6 +63,11 @@ public class CommandFactory {
             if(verb.equals("attack")){
             	return new AttackCommand(null, noun);
             }
+            //In case of trade command with no NPC
+            if(verb.equals("trade")){
+            	return new TradeCommand(null, noun);
+            }
+            //ItemSpecificCommand
             return new ItemSpecificCommand(verb, noun);
         }
         if(parts.length == 3)
@@ -71,10 +76,19 @@ public class CommandFactory {
         	if(verb.equals("attack")){
             	return new AttackCommand(null, noun);
             }
+        	//In case of trade command with no NPC but with a 'with'
+        	if(verb.equals("trade")){
+            	return new AttackCommand(null, noun);
+            }
         }
         if(parts.length == 4)
         {
+        	//Properly formatted attack command
         	if(verb.equals("attack")){
+            	return new AttackCommand(parts[3], noun);
+            }
+        	//Properly formatted trade command
+        	if(verb.equals("trade")){
             	return new AttackCommand(parts[3], noun);
             }
         }
