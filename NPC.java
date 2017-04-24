@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  */
 class NPC {
-	class NoNPCException extends Exception {}
+	static class NoNPCException extends Exception {}
 	
 	private String name;
 	private Room currentRoom;
@@ -126,6 +126,15 @@ class NPC {
 	public Item getItemFromInventoryNamed(String name) throws NoItemException
 	{
 		
+	}
+	
+	/** Adjusts this NPC's health by the parameter amount
+     * 
+     * @param change Amount to change this NPC's health by (negative to increase health)
+     */
+	public void changeHealth(int wound)
+	{
+		health -= wound;
 	}
 	
 	/** Moves the NPC to a new Room

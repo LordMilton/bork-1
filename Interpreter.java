@@ -48,10 +48,21 @@ public class Interpreter {
             command = promptUser(commandLine);
 
             while (!command.equals("q")) {
-
                 System.out.print(
                     CommandFactory.instance().parse(command).execute());
 
+                //Determines if adventurer has won or if adventurer is dead and acts accordingly (both end the game)
+                if(state.getAdventurersScore() == Integer.MAX_VALUE)
+            	{
+            		System.out.println("Congratulations, you have beaten the dungeon!");
+            		break;
+            	}
+            	if(state.getAdventurerIsDead())
+            	{
+            		System.out.println("You have died.");
+            		break;
+            	}
+                
                 command = promptUser(commandLine);
             }
 

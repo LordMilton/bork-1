@@ -26,7 +26,7 @@ public class GameState {
 
     static String DEFAULT_SAVE_FILE = "bork_save";
     static String SAVE_FILE_EXTENSION = ".sav";
-    static String SAVE_FILE_VERSION = "Bork v3.0 save data";
+    static String SAVE_FILE_VERSION = "Group Bork v1.0 save data";
 
     static String ADVENTURER_MARKER = "Adventurer:";
     static String CURRENT_ROOM_LEADER = "Current room: ";
@@ -50,7 +50,7 @@ public class GameState {
     private GameState() {
         inventory = new ArrayList<Item>();
         adventurersScore = 0;
-        adventurersHealth = 0;
+        adventurersHealth = 50;
         adventurerIsDead = false;
     }
 
@@ -211,6 +211,21 @@ public class GameState {
         }
         throw new Item.NoItemException();
     }
+    
+    /** Returns the NPC in the vicinity that has the parameter name as its name
+     * 
+     * @param name Name of the NPC to find
+     * @return The NPC with the parameter name as its name, if one is in the adventurersCurrentRoom
+     * @throws NPC.NoNPCException If there is no NPC going by the parameter name in the adventurersCurrentRoom
+     */
+    NPC getNPCFromVicinityNamed(String name) throws NPC.NoNPCException
+    {
+    	if(dungeon.getNPC(name).getCurrentRoom() == adventurersCurrentRoom)
+    	{
+    		return dungeon.getNPC(name);
+    	}
+    	throw new NPC.NoNPCException();
+    }
 
     /** Returns the current Room of the player
      * 
@@ -243,6 +258,10 @@ public class GameState {
     void changeHealth(int change)
     {
     	adventurersHealth += change;
+    	if(health <= 0)
+    	{
+    		adventurerIsDead = true;
+    	}
     }
     
     /** Adjusts the player's score by the parameter amount
@@ -251,7 +270,12 @@ public class GameState {
      */
     void changeScore(int change)
     {
-    	adventurersScore += change;
+    	if(change == Integer.MAX_VALUE)
+    	{
+    		adventurersScore = Integer.MAX_VALUE;
+    	}
+    	else
+    		adventurersScore += change;
     }
     
     /** Returns the player's current health
@@ -263,6 +287,15 @@ public class GameState {
     	return adventurersHealth;
     }
     
+    /** Returns whether or not the player has died
+     * 
+     * @return adventurerIsDead
+     */
+    boolean getAdventurerIsDead()
+    {
+    	return adventurerIsDead;
+    }
+    
     /** Returns the player's current score
      * 
      * @return adventurersScore
@@ -272,6 +305,10 @@ public class GameState {
     	return adventurersScore;
     }
     
+    /** Completely removes the parameter Item from the dungeon
+     * 
+     * @param item Item to remove from the Dungeon
+     */
     void obliterateItem(Item item)
     {
     	if(!inventory.remove(item))
@@ -280,6 +317,11 @@ public class GameState {
     	}
     }
     
+    /** Completely removes the parameter itemToDestory from the Dungeon and puts the parameter itemToAdd in its place
+     * 
+     * @param itemToDestroy Item to remove from the Dungeon
+     * @param itemToAdd The Item to replace itemToDestroy with
+     */
     void transformItem(Item itemToDestroy, Item itemToAdd)
     {
     	if(!inventory.remove(itemToDestroy))

@@ -19,17 +19,17 @@ public class EventFactory {
 	{
 		for(String event:events)
 		{
-			String[] eventParsed = event.split("(");
+			String[] eventParsed = event.split("\\(");
 			
 			if(eventParsed[0].equalsIgnoreCase("Score"))
 			{
 				//Argument is score amount
-				item.scoreEvent(Integer.parseInt(eventParsed[1].substring(0, eventParsed[1].length())));
+				item.scoreEvent(Integer.parseInt(eventParsed[1].substring(0, eventParsed[1].length()-1)));
 			}
 			else if(eventParsed[0].equalsIgnoreCase("Wound"))
 			{
 				//Argument is wound amount
-				item.woundEvent(Integer.parseInt(eventParsed[1].substring(0, eventParsed[1].length())));
+				item.woundEvent(Integer.parseInt(eventParsed[1].substring(0, eventParsed[1].length()-1)));
 			}
 			else if(eventParsed[0].equalsIgnoreCase("Die"))
 			{
@@ -46,7 +46,8 @@ public class EventFactory {
 			else if(eventParsed[0].equalsIgnoreCase("Transform"))
 			{
 				try{
-					item.transformEvent(GameState.instance().getDungeon().getItem(eventParsed[1].substring(0, eventParsed[1].length())));
+					//Argument is Item to transform into
+					item.transformEvent(GameState.instance().getDungeon().getItem(eventParsed[1].substring(0, eventParsed[1].length()-1)));
 				}catch(Item.NoItemException e){
 					System.err.println("A transform event for "+ item.getPrimaryName() +" had a non-existent Item to"+
 								       "into.");
@@ -54,7 +55,6 @@ public class EventFactory {
 			}
 			else if(eventParsed[0].equalsIgnoreCase("Teleport"))
 			{
-				//Argument is Item to transform into
 				item.teleportEvent();
 			}
 		}

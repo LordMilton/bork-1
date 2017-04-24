@@ -131,7 +131,7 @@ public class Daytime {
 	 * */
 	public static String getTime(){
 		
-		String totalTime = currenthour + ":" + currentmin;
+		String totalTime = currenthour + ":" + currentmin +"\n";
 		return totalTime;
 	}
 	
