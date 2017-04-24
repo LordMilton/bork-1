@@ -260,7 +260,7 @@ public class GameState {
     void changeHealth(int change)
     {
     	adventurersHealth += change;
-    	if(health <= 0)
+    	if(adventurersHealth <= 0)
     	{
     		adventurerIsDead = true;
     	}
