@@ -1,0 +1,114 @@
+The Battle-Torn Field
+Group Zork v1.0
+===
+Items:
+Bomb 95
+examine:The bomb is a heavy, glistening black sphere. On the top appears to be some form of detonator.
+kick[Wound(2)]:Ouch! That hurt your foot.
+detonate[Die]:An ear-splitting halo of shrapnel kills you and seriously degrades the room's interior.
+---
+DrPepper 10
+kick:The can skitters down the hallway.
+shake:A liquid fizzes menacingly inside the can.
+drink[Transform(emptyCan),Wound(-1)]:Gulp, gulp -- that was GOOD!
+---
+emptyCan 2
+kick:The empty can skitters down the hallway.
+drink:Sorry, all gone!
+stomp[Transform(squishedCan)]:The can crunches down into a thin disk, useful for recycling.
+---
+squishedCan 2
+throw:Zing!
+stomp:Further stomping seems to have no effect.
+recycle[Score(5),Disappear]:Boo-ya, helped save the environment.
+---
+magicWand 5
+weapon:5
+break[Wound(10),Disappear]:The wand snaps in half. Strange magic fills the air, making you feel suddenly ill.
+wave[Score(5),Teleport]:An angelic form briefly appears, smiles, and just as quickly fades away.
+---
+StarWarsToy 5
+touch[Score(1)]:Yoda says, "Do, or do not! There is no try."
+break:Luckily, it's made of rugged plastic.
+---
+chainsaw 35
+weapon:12
+---
+WawaTravelMug 10
+refill[Win]:You refill the mug with everlasting light roast coffee, and live happily ever after! :)
+---
+donut 7
+eat[Disappear,Wound(-2)]:You feel mildly guilt-ridden.
+stomp:The donut is now smooshed.
+---
+===
+Rooms:
+Entrance
+You're standing in front of the entrance to the disabled warship. A large hole from cannon fire a century ago leaves a slightly jagged opening for you to crawl through. You slightly wonder if other scavengers have picked it clean already... or are still lingering.
+---
+Lit Hallway
+Contents: DrPepper
+A long cramped hallway stretches from end to end. Cut marks from swords and redish brown stains still mar the walls from it's bloody history. The hole provides amble light.
+---
+Captains Office
+Contents: StarWarsToy,WawaTravelMug
+Legend tells of a tall commander named Arrrr Davies who's great legendary lethality and cunning single-handedly turned the tide of the battle. That is, until a freak electrical storm burned and ripped apart his ship, and fell thousands of feet into this frost-ridden field below. He and his crew were never seen again. 
+---
+Dilapidated Firing Deck
+Contents: Bomb
+Tall cannon ports still open to the outside world allow for heavy sunlight to be let in. There are a bunch of round objects here. Oof, they're heavy.
+---
+A Dark, Dark Room
+Contents: chainsaw
+It is pitch black in here. You can't tell the size or the shape of the room, or even discern your hand in front of your face as an alamingly pungent smell fills your nostrils and a grumbling sound reverberates the metal walls. You hope it's just your stomach.
+---
+===
+Exits:
+Entrance
+u
+A Dark, Dark Room
+---
+A Dark, Dark Room
+d
+Entrance 
+---
+Entrance
+d
+Lit Hallway
+---
+Lit Hallway
+u
+Entrance
+---
+Dilapidated Firing Deck
+w
+Lit Hallway
+---
+Lit Hallway
+e
+Dilapidated Firing Deck
+---
+Lit Hallway
+w
+Captains Office
+---
+Captains Office
+e
+Lit Hallway
+---
+===
+NPCs:
+troll
+A huge, ugly, brute of a creature. He looks like he wants to crush something.
+spawnlight:5
+Hostile:true
+23
+Inventory: magicWand,donut
+---
+imp
+A small, humanoid creature. His teeth look very sharp, but he looks friendly enough.
+spawnlight:12
+Hostile:false
+12
+---
+===
