@@ -103,6 +103,9 @@ public class GameState {
                 }
             }
         }
+        if (s.hasNext()) {
+			currentTime = s.nextLine();
+		}
     }
     
     /** Calls the main store(saveName : String) method with a default save File name
@@ -133,6 +136,8 @@ public class GameState {
             }
             w.println(inventory.get(inventory.size()-1).getPrimaryName());
         }
+        w.println("===");
+        w.println(Daytime.getTime());
         w.close();
     }
 
