@@ -41,6 +41,12 @@ donut 7
 eat[Disappear,Wound(-2)]:You feel mildly guilt-ridden.
 stomp:The donut is now smooshed.
 ---
+RustedSword 20
+weapon: 6
+---
+PlasmaDeathCannon 70
+weapon: 100
+---
 ===
 Rooms:
 Entrance
@@ -60,41 +66,98 @@ Tall cannon ports still open to the outside world allow for heavy sunlight to be
 ---
 A Dark, Dark Room
 Contents: chainsaw
-It is pitch black in here. You can't tell the size or the shape of the room, or even discern your hand in front of your face as an alamingly pungent smell fills your nostrils and a grumbling sound reverberates the metal walls. You hope it's just your stomach.
+It is pitch black in here. You can't tell the size or the shape of the room, or even discern your hand in front of your face as an alarmingly pungent smell fills your nostrils and a grumbling sound reverberates the metal walls. You hope it's just your stomach.
+---
+The Brig
+Contents: RustedSword
+Rows and rows of prison cells line the corridor, most are open and agape but one is lock and closed. A dead barren body lies within. Poor chap. There is however a cabinet here with a rusted blade sticking out of it.
+---
+Torture Room
+A single hole in the ceiling illuminates a dentist's chair in the center, with straps hanging loose around the arms to restrain the victims. Unsanitary and bloodied tools line the tray next to the seat: scalpels, salt, needles, and a broken bone saw lie scattered. You and your teeth feel uneasy.
+---
+Body-Dumping Room
+Assumedly, this is where the bodies get dumped. Those unfortunate souls that met their fate at the hands of the doctor that some claim went mad, for who else stand such a brutish job? But madness doesn't account for the highest paid civilian on the ship assigned to take care of those troubled persons on the ship. There'a strange ominous presence here that makes you very uneasy. It's probably just the pile of bones.
+---
+Armory
+Contents: PlasmaDeathCannon
+Thank the gods above, you've finally found a room with something to defend yourself with. Rows upon rows of steam pistols and sabres line the racks, bullets gleaming against the pale light, capacitors still faintly whirling ready to be fired. And right there under a rusted cabinet lies a hulking laser gun. You'll probably need it.
+---
+Dragon Lair
+Somehow this large looming metal box has attracted a local dragon to its depths. Your prayer for it to be sleeping is very quickly quashed once its head flicks towards you, slitted eyes glaring into your essence. It's large majestic body proudly shines like a glow-in-the-dark candle, it's tank top freshly laundered by its goblin slaves. "Dost thou even lift" it bellows at you in a whisper. You pee a little.
 ---
 ===
 Exits:
 Entrance
 u
-A Dark, Dark Room
+Lit Hallway
 ---
-A Dark, Dark Room
+Lit Hallway
 d
 Entrance 
 ---
-Entrance
-d
 Lit Hallway
+w
+The Brig
+---
+The Brig
+e
+Lit Hallway
+---
+The Brig
+u
+Torture Room
+---
+Torture Room
+d
+The Brig
+---
+Torture Room
+u
+Body-Dumping Room
+---
+Body-Dumping Room
+d
+Torture Room
+---
+Dilapidated Firing Deck
+w
+Lit Hallway
+---
+Lit Hallway
+e
+Dilapidated Firing Deck
 ---
 Lit Hallway
 u
-Entrance
+A Dark, Dark Room
 ---
-Dilapidated Firing Deck
-w
+A Dark, Dark Room
+d
 Lit Hallway
 ---
-Lit Hallway
-e
-Dilapidated Firing Deck
----
-Lit Hallway
-w
+A Dark, Dark Room
+u
 Captains Office
 ---
 Captains Office
+d
+A Dark, Dark Room
+---
+Captains Office
 e
-Lit Hallway
+Armory
+---
+Armory
+w
+Captains Office
+---
+Armory
+u
+Dragon Lair
+---
+Dragon Lair
+d
+Armory
 ---
 ===
 NPCs:
