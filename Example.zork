@@ -42,10 +42,10 @@ eat[Disappear,Wound(-2)]:You feel mildly guilt-ridden.
 stomp:The donut is now smooshed.
 ---
 RustedSword 20
-weapon: 6
+weapon:6
 ---
 PlasmaDeathCannon 70
-weapon: 100
+weapon:100
 ---
 ===
 Rooms:
