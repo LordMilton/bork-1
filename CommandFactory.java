@@ -94,8 +94,7 @@ public class CommandFactory {
         }
         //Wait command that has no specified wait time
         if (verb.equals("wait")) {
-		int time = Integer.parseInt(noun);
-		return new WaitCommand(time);
+        	return new WaitCommand();
         }
         
         //health command
