@@ -15,7 +15,7 @@ public class Interpreter {
                                     // singleton
 
     public static String USAGE_MSG = 
-        "Usage: Interpreter borkFile.bork|saveFile.sav.";
+        "Usage: Interpreter zorkFile.zork|saveFile.sav.";
 
     public static void main(String args[]) {
 
@@ -29,7 +29,7 @@ public class Interpreter {
         try {
             state = GameState.instance();
             
-            if (filename.endsWith(".bork")) {
+            if (filename.endsWith(".zork")) {
                 state.initialize(new Dungeon(filename));
                 System.out.println("\nWelcome to " + 
                     state.getDungeon().getName() + "!");
