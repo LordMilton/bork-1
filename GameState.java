@@ -227,11 +227,16 @@ public class GameState {
      */
     NPC getNPCInVicinityNamed(String name) throws NPC.NoNPCException
     {
-    	if(dungeon.getNPC(name).getCurrentRoom() == adventurersCurrentRoom)
-    	{
-    		return dungeon.getNPC(name);
+    	try{
+	    	if(dungeon.getNPC(name).getCurrentRoom() == adventurersCurrentRoom)
+	    	{
+	    		return dungeon.getNPC(name);
+	    	}
+    	}catch(NullPointerException e){
+    		throw new NPC.NoNPCException();
     	}
-    	throw new NPC.NoNPCException();
+    	//This should not happen, just makes the compiler happy
+    	return null;
     }
 
     /** Returns the current Room of the player

@@ -143,6 +143,7 @@ public class Dungeon {
     private void init() {
         rooms = new Hashtable<String,Room>();
         items = new Hashtable<String,Item>();
+        npcs = new Hashtable<String,NPC>();
     }
 
     /** Store the current (changeable) state of this dungeon using the parameter Writer.
