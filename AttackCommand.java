@@ -10,12 +10,13 @@ class AttackCommand extends Command{
 	private Item weapon;
 	private boolean weaponProvided;
 	private NPC victim;
+	private boolean victimProvided;
 	private boolean victimIsPlayer;
 	
 	/** Instantiates an AttackCommand using the parameter weapon
 	 * 
 	 * @param weapon Weapon that is being used to attack
-	 * @param victim NPC that is being attacked, null implies that the player is being attacked
+	 * @param victim NPC that is being attacked, "player" implies that the player is being attacked
 	 */
 	AttackCommand(String weapon, String victim)
 	{
@@ -33,7 +34,11 @@ class AttackCommand extends Command{
 		{
 			weaponProvided = false;
 		}
-		if(victim != null)
+		if(victim == null)
+		{
+			victimProvided = false;
+		}
+		else if(!victim.equals("player"))
 		{
 			try{
 				this.victim = state.getNPCInVicinityNamed(victim);
@@ -41,10 +46,12 @@ class AttackCommand extends Command{
 				this.victim = null;
 			}
 			victimIsPlayer = false;
+			victimProvided = true;
 		}
 		else
 		{
 			victimIsPlayer = true;
+			victimProvided = true;
 		}
 	}
 	
@@ -53,6 +60,10 @@ class AttackCommand extends Command{
 	 */
 	String execute()
 	{
+		if(!weaponProvided && !victimProvided)
+		{
+			return "What do you want to attack, and with what?\n";
+		}
 		if(!weaponProvided && victim != null)
 		{
 			return "Attack "+ victim +" with what?\n";

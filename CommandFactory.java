@@ -52,6 +52,14 @@ public class CommandFactory {
         if (MOVEMENT_COMMANDS.contains(verb)) {
             return new MovementCommand(verb);
         }
+        //Attack Commands with no arguments at all
+        if(parts.length == 1)
+        {
+        	if(verb.equals("attack"))
+        	{
+        		return new AttackCommand(null,null);
+        	}
+        }
         //Wait and Item Specific Commands both can take a verb and a noun
         if (parts.length == 2) {
         	//wait command for time
