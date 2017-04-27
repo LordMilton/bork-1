@@ -3,54 +3,72 @@ Group Zork v1.0
 ===
 Items:
 Bomb 95
-examine:The bomb is a heavy, glistening black sphere. On the top appears to be some form of detonator.
+examine:The bomb is a heavy, glistening black sphere. On the top appears to be some form of detonator. Try not to kick it, or detonate it for that matter.
 kick[Wound(2)]:Ouch! That hurt your foot.
 detonate[Die]:An ear-splitting halo of shrapnel kills you and seriously degrades the room's interior.
 ---
 DrPepper 10
+examine:It's a red metal cylinder with a clasp on top. It can be kicked, shaked, and drunk.
 kick:The can skitters down the hallway.
 shake:A liquid fizzes menacingly inside the can.
 drink[Transform(emptyCan),Wound(-1)]:Gulp, gulp -- that was GOOD!
 ---
 emptyCan 2
+examine:A red metal cyclinder surprisingly light. It's probably empty. It can be kicked, drunk, or stomped.
 kick:The empty can skitters down the hallway.
 drink:Sorry, all gone!
 stomp[Transform(squishedCan)]:The can crunches down into a thin disk, useful for recycling.
 ---
 squishedCan 2
+examine:A squashed can, full of regret and broken promises.
 throw:Zing!
 stomp:Further stomping seems to have no effect.
 recycle[Score(5),Disappear]:Boo-ya, helped save the environment.
 ---
 magicWand 5
 weapon:5
+examine:You think if you pick it up you'll become a wizard. A hairy one. Who's good at potting. Do you get the reference yet? You can break it and wave it.
 break[Wound(10),Disappear]:The wand snaps in half. Strange magic fills the air, making you feel suddenly ill.
 wave[Score(5),Teleport]:An angelic form briefly appears, smiles, and just as quickly fades away.
 ---
 StarWarsToy 5
+examine:A toy from a fictional universe where outlandish things happened. And lasers.
 touch[Score(1)]:Yoda says, "Do, or do not! There is no try."
 break:Luckily, it's made of rugged plastic.
 ---
 chainsaw 35
+examine:A string of eyes chained together. So it saw everything. You feel creeped out, but it's probably effective as a weapon.
 weapon:12
 ---
 WawaTravelMug 10
-refill[Win]:You refill the mug with everlasting light roast coffee, and live happily ever after! :)
+examine:You probably want to drink what's in here. Or maybe it's poison. It's probably poison. Don't drink the poison.
+refill:You refill the mug with some nearby poison. You're not going to drink that.
 ---
-donut 7
-eat[Disappear,Wound(-2)]:You feel mildly guilt-ridden.
-stomp:The donut is now smooshed.
+MoldyDonut 7
+examine:A donut from better days. You can eat it or stomp it.
+eat[Disappear,Wound(-2)]:You feel mildly guilt-ridden. And disease ridden.
+stomp:The donut is now smooshed. You could say it's molded that way.
 ---
 RustedSword 20
 weapon:6
+examine:A sword made from iron. It probably would've been effective 100 years ago but now it's orange. You can break it, but bad things might happen.
+break[Die]:You break the sword. It releases a deathly cloud of tetanus which you inhale, coughing spasmodically. Your diseased lungs give out under the strain as you collapse to the ground, vision fading to black.
 ---
 PlasmaDeathCannon 70
 weapon:100
+examine:You feel the vibrations in your body, throbbing deep within. You want to hold it. And shoot it into a dragon's gut.
+---
+BagOfMarbles 1
+examine:Oh good, I thought I lost those.
+---
+Treasure 1
+examine:Yarr it be treasure! Now you can go back to your dirty foreclosed home you're squatting in with your abusive uncle who beats you every night. But hey after your parents dropped you off at the fire station you know you shouldn't think you deserve any better. This treasure you're stealing might be enough for you to afford a full meal, as long as it isn't stolen like your mom's locket that you loved and held dear as your one personal treasure when you were five. Maybe the lice will stop gnawing your scalp as the mosquito ridden cupboard you call your own bed will finally be deemed unlivable and you can sleep in a real bedroom. You feel slightly less accomplished as you stare at the dead carcuss of the dragonbro and his dead daughter. You learn he just got custody from his abusive ex-wife to save his little Petunia who was born with 3 legs and striken with the pox at young age. They're probably in a better place anyway. You can claim the treasure to win. You sociopath.
+claim[Win]:You win! Now go take a shower you filthy beast.
 ---
 ===
 Rooms:
 Entrance
-You're standing in front of the entrance to the disabled warship. A large hole from cannon fire a century ago leaves a slightly jagged opening for you to crawl through. You slightly wonder if other scavengers have picked it clean already... or are still lingering.
+You're standing in front of the entrance to the disabled warship. A large hole from cannon fire a century ago leaves a slightly jagged opening for you to crawl through. You slightly wonder if other scavengers have picked it clean already... or are still lingering. **AUTHORS NOTE** If you're unsure of what to do with an item EXAMINE it!
 ---
 Lit Hallway
 Contents: DrPepper
@@ -73,9 +91,11 @@ Contents: RustedSword
 Rows and rows of prison cells line the corridor, most are open and agape but one is lock and closed. A dead barren body lies within. Poor chap. There is however a cabinet here with a rusted blade sticking out of it.
 ---
 Torture Room
+Contents: MoldyDonut
 A single hole in the ceiling illuminates a dentist's chair in the center, with straps hanging loose around the arms to restrain the victims. Unsanitary and bloodied tools line the tray next to the seat: scalpels, salt, needles, and a broken bone saw lie scattered. You and your teeth feel uneasy.
 ---
 Body-Dumping Room
+Contents: BagOfMarbles
 Assumedly, this is where the bodies get dumped. Those unfortunate souls that met their fate at the hands of the doctor that some claim went mad, for who else stand such a brutish job? But madness doesn't account for the highest paid civilian on the ship assigned to take care of those troubled persons on the ship. There'a strange ominous presence here that makes you very uneasy. It's probably just the pile of bones.
 ---
 Armory
@@ -83,6 +103,7 @@ Contents: PlasmaDeathCannon
 Thank the gods above, you've finally found a room with something to defend yourself with. Rows upon rows of steam pistols and sabres line the racks, bullets gleaming against the pale light, capacitors still faintly whirling ready to be fired. And right there under a rusted cabinet lies a hulking laser gun. You'll probably need it.
 ---
 Dragon Lair
+Contents: Treasure
 Somehow this large looming metal box has attracted a local dragon to its depths. Your prayer for it to be sleeping is very quickly quashed once its head flicks towards you, slitted eyes glaring into your essence. It's large majestic body proudly shines like a glow-in-the-dark candle, it's tank top freshly laundered by its goblin slaves. "Dost thou even lift" it bellows at you in a whisper. You pee a little.
 ---
 ===
@@ -104,19 +125,19 @@ e
 Lit Hallway
 ---
 The Brig
-u
+n
 Torture Room
 ---
 Torture Room
-d
+s
 The Brig
 ---
 Torture Room
-u
+n
 Body-Dumping Room
 ---
 Body-Dumping Room
-d
+s
 Torture Room
 ---
 Dilapidated Firing Deck
@@ -128,19 +149,19 @@ e
 Dilapidated Firing Deck
 ---
 Lit Hallway
-u
+n
 A Dark, Dark Room
 ---
 A Dark, Dark Room
-d
+s
 Lit Hallway
 ---
 A Dark, Dark Room
-u
+n
 Captains Office
 ---
 Captains Office
-d
+s
 A Dark, Dark Room
 ---
 Captains Office
@@ -152,11 +173,11 @@ w
 Captains Office
 ---
 Armory
-u
+n
 Dragon Lair
 ---
 Dragon Lair
-d
+s
 Armory
 ---
 ===
