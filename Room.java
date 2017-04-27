@@ -154,10 +154,9 @@ public class Room {
             description += "\nThere is a " + item.getPrimaryName() + " here.";
         }
         if (contents.size() > 0) { description += "\n"; }
-        if (!beenHere) {
-            for (Exit exit : exits) {
-                description += "\n" + exit.describe();
-            }
+        //changed so exits print out every time you walk into room
+        for (Exit exit : exits) {
+            description += "\n" + exit.describe();
         }
         beenHere = true;
         return description;
