@@ -31,7 +31,8 @@ class ItemSpecificCommand extends Command {
         String msg = itemReferredTo.getMessageForVerb(verb);
         ArrayList<String> events = itemReferredTo.getEventForVerb(verb);
         
-        if(msg == null)
+        //Something was happening with the hashtable and caused it to return "null\n" instead of null for an empty value
+        if(msg == null || msg.equals("null\n"))
         	return ("Sorry, you can't " + verb + " the " + noun + "." + "\n");
             
         EventFactory.execute(itemReferredTo, events);

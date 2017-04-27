@@ -17,6 +17,10 @@ public class EventFactory {
 	 */
 	public static void execute(Item item, ArrayList<String> events)
 	{
+		if(events == null || events.isEmpty())
+		{
+			return;
+		}
 		for(String event:events)
 		{
 			String[] eventParsed = event.split("\\(");
