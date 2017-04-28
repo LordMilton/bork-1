@@ -43,6 +43,80 @@ public class Daytime {
 		//sets the time based on input
 		currenthour = hours_;
 		currentmin = mins_;
+		
+		//sets light value based on current hour
+		if(currenthour == 0){
+			setLightValue(1);
+		}
+		else if(currenthour == 1){
+			setLightValue(0);
+		}
+		else if(currenthour == 2){
+			setLightValue(1);
+		}
+		else if(currenthour == 3){
+			setLightValue(2);
+		}
+		else if(currenthour == 4){
+			setLightValue(3);
+		}
+		else if(currenthour == 5){
+			setLightValue(4);
+		}
+		else if(currenthour == 6){
+			setLightValue(5);
+		}
+		else if(currenthour == 7){
+			setLightValue(6);
+		}
+		else if(currenthour == 8){
+			setLightValue(7);
+		}
+		else if(currenthour == 9){
+			setLightValue(8);
+		}
+		else if(currenthour == 10){
+			setLightValue(9);
+		}
+		else if(currenthour == 11){
+			setLightValue(10);
+		}
+		else if(currenthour == 12){
+			setLightValue(11);
+		}
+		else if(currenthour == 13){
+			setLightValue(12);
+		}
+		else if(currenthour == 14){
+			setLightValue(11);
+		}
+		else if(currenthour == 15){
+			setLightValue(10);
+		}
+		else if(currenthour == 16){
+			setLightValue(9);
+		}
+		else if(currenthour == 17){
+			setLightValue(8);
+		}
+		else if(currenthour == 18){
+			setLightValue(7);
+		}
+		else if(currenthour == 19){
+			setLightValue(6);
+		}
+		else if(currenthour == 20){
+			setLightValue(5);
+		}
+		else if(currenthour == 21){
+			setLightValue(4);
+		}
+		else if(currenthour == 22){
+			setLightValue(3);
+		}
+		else if(currenthour == 23){
+			setLightValue(2);
+		}
 	}
 	
 	/** Adds time (2 min) after each action to determine the light value
