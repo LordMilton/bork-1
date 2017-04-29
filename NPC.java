@@ -1,5 +1,5 @@
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * 
@@ -41,7 +41,9 @@ class NPC {
 	 */
 	public boolean goesBy(String name)
 	{
-		
+		if(this.name.equals(name))
+			return true;
+		return false;
 	}
 	
 	/** Returns the NPC's name
@@ -86,17 +88,13 @@ class NPC {
 	 */
 	public ArrayList<String> getInventoryNames()
 	{
+		ArrayList<String> names = new ArrayList<>(inventory.size());
+		for(Item item:inventory)
+		{
+			names.add(item.getPrimaryName());
+		}
 		
-	}
-	
-	/** Trades the parameter Item with the first Item in the NPC's inventory, will not be enacted if the NPC's inventory is empty
-	 * 
-	 * @param itemToTrade Item that the NPC will receive
-	 * @return Item that the NPC will give in return
-	 */
-	public Item trade(Item itemToTrade)
-	{
-		
+		return names;
 	}
 	
 	/** Adds an Item to the NPC's inventory
@@ -123,9 +121,14 @@ class NPC {
 	 * @return The Item going by the parameter name if it is in inventory
 	 * @throws NoItemException If there is no Item in inventory that goes by the parameter name
 	 */
-	public Item getItemFromInventoryNamed(String name) throws NoItemException
+	public Item getItemFromInventoryNamed(String name) throws Item.NoItemException
 	{
-		
+		for (Item item : inventory) {
+            if (item.goesBy(name)) {
+                return item;
+            }
+        }
+        throw new Item.NoItemException();
 	}
 	
 	/** Adjusts this NPC's health by the parameter amount
@@ -137,12 +140,16 @@ class NPC {
 		health -= wound;
 	}
 	
-	/** Moves the NPC to a new Room
+	/** Moves the NPC to a new Room by randomly picking a direction and moving in that direction
 	 * 
-	 * @return The Room the NPC moved to
 	 */
-	public Room move()
+	public void move()
 	{
-		
+		char[] directions = {'n','e','s','w','u','d'};
+		int random = (int)(Math.random()*6);
+		Room nextRoom = currentRoom.leaveBy(""+ directions[random]);
+        if (nextRoom != null) {  // could try/catch here.
+            GameState.instance().setAdventurersCurrentRoom(nextRoom);
+        }
 	}
 }
